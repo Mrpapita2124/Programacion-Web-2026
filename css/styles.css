@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+h1{
+      color: green;
+      font:100px Arial, Helvetica, sans-serif;
+    }
+    
+.subtitulo{
+  color: rgb(154, 210, 203);
+  font-weight: bold;
+}
+#descripcionCafeteria{
+  color: rgb(0, 68, 60);
+  font-weight: italic;
+}
+
