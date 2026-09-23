@@ -1,18 +1,28 @@
+:root {
+  --color1: #9AD2CB;
+  --color2: #D7EBBA;
+  --color3: #FEFFBA;
+  --color4: #EBD494;
+  --color5: #472836;
+}
 * {
   padding: 0;
   margin: 0;
 }
 h1{
-      color: rgb(231,211,160);
-      font:100px Arial, Helvetica, sans-serif;
+      color: var(--color2);
+      font:100px Inconsolata, Helvetica, sans-serif;
     }
     
 .subtitulo{
-  color: rgb(71, 40, 54);
+  color: var(--color1);
   font-weight: bold;
 }
 #descripcionCafeteria{
-  color: rgb(0, 68, 60);
+  color: var(--color2);
   font-weight: italic;
+}
+body{
+  background: var(--color5);
 }
 
