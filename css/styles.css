@@ -9,15 +9,9 @@
   padding: 0;
   margin: 0;
 }
-
-    
 .subtitulo{
   color: var(--texto);
   font-weight: bold;
-}
-#descripcionCafeteria{
-  color: var(--texto);
-  font-weight: italic;
 }
 body{
   background: var(--fondo);
@@ -28,7 +22,6 @@ header{
   height: 15vh;
   display: flex;
   align-items: center;
-
 }
 header video{
   position: absolute;
@@ -87,7 +80,40 @@ aside{
   padding: 10px;
 }
 .carrusel img{
-  height: 60%;
+  height: 90%;
   width: 15vw;
   border-radius: 10px;
 }
+footer{
+  background-color: var(--fondo_alterno);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: right;
+}
+footer h3{
+  color: var(--texto);
+  font-weight: bold;
+  font-size: 5vh;
+}
+footer .footer-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 3vh;
+}
+footer .footer-sections{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+}
+footer *{
+  margin: 10px 0px 30px 0px;
+}
+footer .footer-leyend{
+  text-align: center;
+}
+
