@@ -30,16 +30,24 @@
   <body>
     
     <header>
-      <h1>40-20 Café</h1>
+      
+      <video autoplay muted loop>
+        <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
+      </video>
+      <div class="overlay"></div>
+      <div class="menu">
+        
+      </div>
+      <div class="compania">
+        <h1>40-20 Café</h1>
+      </div>
     </header>
-    <video autoplay muted loop>
-      <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
-    </video>
+    
     <audio autoplay loop>
       <source src="./assets/sounds/bgmusic.mp3" type="audio/mpeg" alt="Música de fondo de la cafetería">
     </audio>
     <nav>
-      <ul>
+      <ul class="navegacion">
         <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Calientes</a></li>
         <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Frias</a></li>
         <li><a href= #menuAlimentos>Ver menu de Alimentos</a></li>
@@ -62,26 +70,22 @@
         <li><a href= "pages/formulario.html">Registrarse</a></li>
       </u>
     </aside>
-    <br>
-    <br>
-    <figure>
-      <img src="./assets/img/cafe.jpg" alt="Café carrusel 1" width="300" height="200" loading="lazy">
-      <img src="./assets/img/cafe2.jpg" alt="Café carrusel 2" width="300" height="200" loading="lazy">
-      <img src="./assets/img/cafe3.jpg" alt="Café carrusel 3" width="300" height="200" loading="lazy">
-      <img src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" width="300" height="200" loading="lazy">
-      <figcaption>Carrusel de imágenes</figcaption>
-    </figure>
-  
-
-    <br>
-    <br>
+    
     <main>
       
-      <h2 class="subtitulo">Bienvenido a 40-20 Café</h2>
-      <p id="descripcionCafeteria">
-        Un <b>aroma</b> que despierta tus <i>sentidos</i> y un sabor
-        diseñado para acompañar tus mejores momentos.
-      </p>
+      <div class="leyenda">
+        <p id="descripcionCafeteria">
+            Un <b>aroma</b> que despierta tus <i>sentidos</i> y un  sabor diseñado para acompañar tus mejores momentos.
+        </p>
+      </div>
+      
+
+      <figure class="carrusel">
+        <img src="./assets/img/cafe.jpg" alt="Café carrusel 1" width="300" height="200" loading="lazy">
+        <img src="./assets/img/cafe2.jpg" alt="Café carrusel 2" width="300" height="200" loading="lazy">
+        <img src="./assets/img/cafe3.jpg" alt="Café carrusel 3" width="300" height="200" loading="lazy">
+        <img src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" width="300" height="200" loading="lazy">
+      </figure>
 
       <br>
         
