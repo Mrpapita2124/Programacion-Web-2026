@@ -83,6 +83,7 @@ aside{
   height: 90%;
   width: 15vw;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px black;
 }
 footer{
   background-color: var(--fondo_alterno);
