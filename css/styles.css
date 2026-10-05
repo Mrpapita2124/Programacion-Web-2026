@@ -8,7 +8,10 @@
 * {
   padding: 0;
   margin: 0;
+  transition: all 0.1s ease-in-out;
 }
+
+
 .subtitulo{
   color: var(--texto);
   font-weight: bold;
@@ -83,7 +86,15 @@ aside{
   height: 90%;
   width: 15vw;
   border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.carrusel img:hover{
+  transform: translateY(-10px);
+  height: 90%;
+  width: 15vw;
+  border-radius: 0px;
   box-shadow: 5px 5px 5px 1px black;
+  
 }
 footer{
   background-color: var(--fondo_alterno);
