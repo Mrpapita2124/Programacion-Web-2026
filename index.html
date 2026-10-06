@@ -18,140 +18,136 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  
+
   <title>40-20 Café: Bebidas calientes, frias, deliciosos postres</title>
-
-  <style>
-    
-
-  </style>
-
-
 </head>
-  <body>
-    
-    <header>
-      
-      <video autoplay muted loop>
-        <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
-      </video>
-      <div class="overlay"></div>
-      <div class="menu">
-        
-      </div>
-      <div class="compania">
-        <h1>40-20 Café</h1>
-      </div>
-    </header>
-    
-    <audio autoplay loop>
-      <source src="./assets/sounds/bgmusic.mp3" type="audio/mpeg" alt="Música de fondo de la cafetería">
-    </audio>
-    <nav>
-      <ul class="navegacion">
-        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Calientes</a></li>
-        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Frias</a></li>
-        <li><a href= #menuAlimentos>Ver menu de Alimentos</a></li>
-        <li><a href= #menuBebidas>Ver menu de Bebidas</a></li>
-        <li><a href= #descripcion>Descripcion</a></li>
-        <li><a href= #contactos>Contacto</a></li>
-      </ul>
-    </nav>
+<body>
 
+  <header class="header">
+    <video class="header__video" autoplay muted loop>
+      <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
+    </video>
+    <div class="header__overlay"></div>
+    <div class="header__menu">
 
+    </div>
+    <div class="header__compania">
+      <h1 class="header__titulo">40-20 Café</h1>
+    </div>
+  </header>
+
+  <audio autoplay loop>
+    <source src="./assets/sounds/bgmusic.mp3" type="audio/mpeg" alt="Música de fondo de la cafetería">
+  </audio>
+
+  <nav class="nav">
+    <ul class="nav__lista">
+      <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Calientes</a></li>
+      <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Bebidas Frias</a></li>
+      <li><a href="#menuAlimentos">Ver menu de Alimentos</a></li>
+      <li><a href="#menuBebidas">Ver menu de Bebidas</a></li>
+      <li><a href="#descripcion">Descripcion</a></li>
+      <li><a href="#contactos">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <br>
+
+  <aside class="aside">
+    <h2 class="subtitulo">40-20</h2>
+    <ul>
+      <li><a href="pages/promociones.html">Promociones</a></li>
+      <li><a href="pages/eventos.html">Eventos</a></li>
+      <li><a href="pages/ubicaciones.html">Ubicaciones</a></li>
+      <li><a href="pages/formulario.html">Iniciar sesion</a></li>
+      <li><a href="pages/formulario.html">Registrarse</a></li>
+    </ul>
+  </aside>
+
+  <main>
+
+    <div class="leyenda">
+      <div class="leyenda__conjunto">
+        <p>
+          Un <b>aroma</b> que despierta tus <i>sentidos</i> y un sabor diseñado para acompañar tus mejores momentos.
+        </p>
+        <div class="leyenda__circulo">
+          <img src="./assets/img/frappe.png" alt="Café frappé" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <figure class="carrusel">
+      <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe.jpg" alt="Café carrusel 1" width="300" height="200" loading="lazy">
+      <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe2.jpg" alt="Café carrusel 2" width="300" height="200" loading="lazy">
+      <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe3.jpg" alt="Café carrusel 3" width="300" height="200" loading="lazy">
+      <img class="carrusel__img carrusel__img--outline" src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" width="300" height="200" loading="lazy">
+    </figure>
 
     <br>
-    <aside>
-      <h2 class="subtitulo">40-20</h2>
-      <u>
-        <li><a href= "pages/promociones.html">Promociones</a></li>
-        <li><a href= "pages/eventos.html">Eventos</a></li>
-        <li><a href= "pages/ubicaciones.html">Ubicaciones</a></li>
-        <li><a href= "pages/formulario.html">Iniciar sesion</a></li>
-        <li><a href= "pages/formulario.html">Registrarse</a></li>
-      </u>
-    </aside>
-    
-    <main>
-      
-      <div class="leyenda">
-        <div class="leyenda-conjunto">
-          <p>
-              Un <b>aroma</b> que despierta tus <i>sentidos</i> y un  sabor diseñado para acompañar tus mejores momentos.
-          </p>
-          <div class="circulo-frappe">
-            <img src="./assets/img/frappe.png" alt="Café frappé" loading="lazy">
-          </div>
-        </div>
+
+    <section id="menuAlimentos">
+      <div class="menu__banner">
+        <h2 class="subtitulo">Ver Menu de Alimentos</h2>
+        <img src="./assets/img/banner_alimentos.png" alt="Banner alimentos" width="1200" height="1000" loading="lazy">
       </div>
-      
+    </section>
 
-      <figure class="carrusel">
-        <img src="./assets/img/cafe.jpg" alt="Café carrusel 1" width="300" height="200" loading="lazy">
-        <img src="./assets/img/cafe2.jpg" alt="Café carrusel 2" width="300" height="200" loading="lazy">
-        <img src="./assets/img/cafe3.jpg" alt="Café carrusel 3" width="300" height="200" loading="lazy">
-        <img src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" width="300" height="200" loading="lazy">
-      </figure>
+    <br>
 
-      <br>
-        
-      <section id="menuAlimentos">
-        <h2 class="subtitulo"> Ver Menu de Alimentos </h2>  
-        <img src="./assets/img/banner_alimentos.png" alt="Café carrusel 1" width="1200" height="1000" loading="lazy">
-      </section>
+    <section id="menuBebidas">
+      <div class="menu__banner">
+        <h2 class="subtitulo">Ver Menu de Bebidas</h2>
+        <img src="./assets/img/banner_bebidas.png" alt="Banner bebidas" width="1200" height="1000" loading="lazy">
+      </div>
+    </section>
 
-      <br>
-      <section id="menuBebidas">
-        <h2 class="subtitulo"> Ver Menu de Bebidas </h2>  
-        <img src="./assets/img/banner_bebidas.png" alt="Café carrusel 2" width="1200" height="1000" loading="lazy">
-      </section>
+    <br>
 
-      <br>
-      <section id="descripcion">
-        <h2 class="subtitulo"> Descripcion </h2>
-        <ol type="A" start="2">
-            
-          <li>Somos una cafetería que ofrece una experiencia única a nuestros clientes.</li>
-          <li>Nuestro menú incluye una variedad de bebidas calientes y frías, así como deliciosos postres y snacks.</li>
-          <li>Nos enorgullece utilizar ingredientes de alta calidad y técnicas de preparación expertas para garantizar la satisfacción del cliente.</li>
-        </ol>
-      </section>
-      <br>
-    </main>
+    <section id="descripcion">
+      <h2 class="subtitulo">Descripcion</h2>
+        <p>Somos una cafetería que ofrece una experiencia única a nuestros clientes.</p>
+        <p>Nuestro menú incluye una variedad de bebidas calientes y frías, así como deliciosos postres y snacks.</p>
+        <p>Nos enorgullece utilizar ingredientes de alta calidad y técnicas de preparación expertas para garantizar la satisfacción del cliente.</p>
+    </section>
 
-    <footer> 
-      <div class="footer-sections">
-        <div class="footer-section">
-          <h3>Sobre Nostros</h3>
+    <br>
+  </main>
 
-          <u>
-            <li><a href= "Trabaja con nostros" target="_blank" rel="noopener noreferrer">Trabaja con nostros</a></li>
-            <li><a href= "Ubicaciones" target="_blank" rel="noopener noreferrer">Ubicaciones</a></li>
-          </u>
-        </div>
-        <div class="footer-section">
+  <footer class="footer">
+
+    <div class="footer__sections">
+      <div class="footer__section">
+        <h3>Sobre Nostros</h3>
+        <ul>
+          <li><a href="Trabaja con nostros" target="_blank" rel="noopener noreferrer">Trabaja con nostros</a></li>
+          <li><a href="Ubicaciones" target="_blank" rel="noopener noreferrer">Ubicaciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
         <h3>Atencion al Cliente</h3>
-          <small>
-            <u>
-              <li><a href="tel:+526121310955" title="Numero del Papita">Contactanos</a></li>
-              <li><a href="mailto:azariascollins20@gmail.com">Facturas electronicas</a></li>
-            </u>
-          </small>
-        </div>
+        <small>
+          <ul>
+            <li><a href="tel:+526121310955" title="Numero del Papita">Contactanos</a></li>
+            <li><a href="mailto:azariascollins20@gmail.com">Facturas electronicas</a></li>
+          </ul>
+        </small>
       </div>
-        <div class="footer-leyend">
-          <small>
-            <i> 
-              
-                © 2026 40-20 Café. Todos los derechos reservados.
 
-              <br><b>
-              Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins
-              </b>
-            </i>
-            Version 1.0.1
-          </small>
-        </div>
-    </footer>
-  </body>
+    </div>
+    <div class="footer__leyend">
+      <small>
+        <i>
+          © 2026 40-20 Café. Todos los derechos reservados.
+          <br><b>
+            Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins
+          </b>
+        </i>
+        Version 1.0.1
+      </small>
+    </div>
+  </footer>
+
+</body>
 </html>
