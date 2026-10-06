@@ -22,8 +22,8 @@ body {
   margin-bottom: 20px;
 }
 
-.header {
-  position: relative;
+header {
+  position: sticky;
   width: 100%;
   height: 15vh;
   display: flex;
@@ -97,12 +97,10 @@ body {
   top: 0;
   left: 0;
   z-index: 2;
-  font-size: 4vh;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
   display: inline-block;
-  margin-top: 50px;
   margin-left: 20px;
-  margin-bottom: 10px;
+  
 }
 
 .subtitulo::after {
@@ -117,14 +115,16 @@ body {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
+  z-index: 1;
 }
-
 .subtitulo:hover::after {
   transform: scaleX(1);
 }
-
 .nav {
-  background-color: var(--fondo_marcado);
+    background-color: var(--fondo_marcado);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .nav__lista {
@@ -239,3 +239,64 @@ body {
   height: 100%;
   rotate: 15deg;
 }
+#menu-alimentos {
+  width: 100%;
+  height: 25vh;
+  background-image: url("../assets/img/banner_alimentos.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#menu-alimentos:hover {
+  width: 100%;
+  height: 25vh;
+  background-image: url("../assets/img/banner_alimentos.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  font-size: 4vh;
+}
+#menu-alimentos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#menu-bebidas {
+  width: 100%;
+  height: 25vh;
+  background-image: url("../assets/img/banner_bebidas.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#menu-bebidas:hover {
+  width: 100%;
+  height: 25vh;
+  background-image: url("../assets/img/banner_bebidas.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  font-size: 4vh;
+}
+#menu-bebidas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.subtitulo_descripcion {
+  color: var(--texto);
+  font-size: 4vh;
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+
