@@ -321,7 +321,7 @@ main{
 }
 
 
-@media (max-width: 308px) {
+@media screen and (max-width: 508px) {
   .leyenda__conjunto {
     flex-direction: column;
   }
