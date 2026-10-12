@@ -321,3 +321,11 @@ main{
 }
 
 
+@media (max-width: 308px) {
+  .leyenda__conjunto {
+    flex-direction: column;
+  }
+  .leyenda p {
+    font-size: 3vh;
+  }
+}
