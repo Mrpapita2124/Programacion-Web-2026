@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
 }
-.menu {
+.menu-toggle {
     display: flex;
     flex-direction: column; 
     gap: 4px; 
@@ -110,13 +110,13 @@
       border-radius: 2px;
     }
     &:hover{
-      #bar1 {
+      .menu-toggle__bar--top {
         animation: mover-barra1 2s ease-in-out infinite;
       }
-      #bar3 {
+      .menu-toggle__bar--bottom {
         animation: mover-barra3 2s ease-in-out infinite;
       }
-      #bar2{
+      .menu-toggle__bar--middle{
         opacity: 0%;
       }
     }
