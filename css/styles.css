@@ -246,6 +246,7 @@
       width: 5vh;
       height: 5vh;
       transition: transform 0.3s ease-in-out;
+      stroke: var(--texto);
     }
     ul{
       li{
