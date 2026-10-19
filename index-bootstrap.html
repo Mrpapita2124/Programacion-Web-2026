@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:title" content="40-20 Café">
+  <meta property="og:description" content="Bienvenido a 40-20 Café, donde encontrará las mejores bebidas calientes y frías, así como deliciosos postres y snacks">
+  <meta property="og:image" content="https://mrpapita2124.github.io/Programacion-Web-2026/assets/img/cafe2.jpg">
+  <meta property="og:url" content="https://mrpapita2124.github.io/Programacion-Web-2026/">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="José Carlos Arce, Azarias Villanueva Collins, Irving Adrian Romero Hernandez">
+  <meta name="description" content="Bienvenido a 40-20 Café, donde encontrará las mejores bebidas calientes y frías, así como deliciosos postres y snacks">
+  <meta name="keywords" content="Cafetería, Sistema de punto de venta, POS, Coffee Shop, Coffee, Café, Barista, Bebidas calientes, Bebidas frías, Comida rápida, Snacks, Pasteles, Postres, Menú de café, Experiencia de café">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://mrpapita2124.github.io/Programacion-Web-2026/">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+  <title>40-20 Café: Bebidas calientes, frias, deliciosos postres</title>
+</head>
+<body>
+  <div class="contenedor">
+    <header class="header">
+      <video class="header__video" autoplay muted loop>
+        <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
+      </video>
+      <div class="header__overlay"></div>
+      <div class="header__menu">
+        <div class="menu-toggle">
+          <p class="menu-toggle__bar menu-toggle__bar--top">_</p>
+          <p class="menu-toggle__bar menu-toggle__bar--middle">_</p>
+          <p class="menu-toggle__bar menu-toggle__bar--bottom">_</p>
+        </div>
+        
+      </div>
+      <div class="header__compania">
+        <h1 class="header__titulo">40-20 Café</h1>
+        <img class="header__logo" src="./assets/img/logo.png" alt="Logo de 40-20 Café" loading="lazy" height="100%">
+      </div>
+    </header>
+    <nav class="navbar sm:navbar-expand bg-4">
+      <div class="container-fluid">
+          <div class="drawer-body">
+            <ul class="navbar-nav justify-content-around">
+              <li class="btn btn-primary"><a class="navbar-brand" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg></a></li>
+              <li class="btn btn-primary"><a class="navbar-brand" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></svg></a></li>
+              <li class="btn btn-primary"><a class="navbar-brand" href="#menuAlimentos"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></a></li>
+              <li class="btn btn-primary"><a class="navbar-brand" href="#menuBebidas"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></a></li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    
+
+    
+
+    <aside class="aside">
+      <h2 class="subtitulo">40-20</h2>
+      <ul>
+        <li><a href="pages/promociones.html">Promociones</a></li>
+        <li><a href="pages/eventos.html">Eventos</a></li>
+        <li><a href="pages/ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="pages/formulario.html">Iniciar sesion</a></li>
+        <li><a href="pages/formulario.html">Registrarse</a></li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <div class="leyenda">
+        <div class="leyenda__conjunto">
+          <p>
+            Un <b>aroma</b> que despierta tus <i>sentidos</i> y un sabor diseñado para acompañar tus mejores momentos.
+          </p>
+          <div class="leyenda__circulo">
+            <img src="./assets/img/frappe.png" alt="Café frappé" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <figure class="carrusel">
+        <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe.jpg" alt="Café carrusel 1" loading="lazy">
+        <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe2.jpg" alt="Café carrusel 2" loading="lazy">
+        <img class="carrusel__img carrusel__img--outline" src="./assets/img/cafe3.jpg" alt="Café carrusel 3" loading="lazy">
+        <img class="carrusel__img carrusel__img--outline" src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" loading="lazy">
+      </figure>
+
+      
+
+      <section id="menu-alimentos">
+        <div class="menu__banner">
+          <h2 class="subtitulo">Ver Menu de Alimentos</h2>
+        </div>
+      </section>
+
+      
+
+      <section id="menu-bebidas">
+        <div class="menu__banner">
+          <h2 class="subtitulo">Ver Menu de Bebidas</h2>
+        </div>
+      </section>
+
+      
+
+      <section id="descripcion">
+        <h2 class="subtitulo_descripcion">Descripcion</h2>
+          <p>Somos una cafetería que ofrece una experiencia única a nuestros clientes.</p>
+          <p>Nuestro menú incluye una variedad de bebidas calientes y frías, así como deliciosos postres y snacks.</p>
+          <p>Nos enorgullece utilizar ingredientes de alta calidad y técnicas de preparación expertas para garantizar la satisfacción del cliente.</p>
+      </section>
+
+    
+    </main>
+
+    <footer class="footer">
+
+      <div class="footer__sections">
+        <div class="footer__section">
+          <h3>Sobre Nostros</h3>
+          <small>
+            <ul class="submenu">
+              <li><a href="Trabaja con nostros" target="_blank" rel="noopener noreferrer">Trabaja con nostros</a></li>
+              <li><a href="Ubicaciones" target="_blank" rel="noopener noreferrer">Ubicaciones</a></li>
+            </ul>
+          </small>
+        </div>
+
+        <div class="footer__section">
+          <h3>Atencion al Cliente</h3>
+          <small>
+            <ul class="submenu">
+              <li><a href="tel:+526121310955" title="Numero del Papita">Contactanos</a></li>
+              <li><a href="mailto:azariascollins20@gmail.com">Facturas electronicas</a></li>
+            </ul>
+          </small>
+        </div>
+
+      </div>
+      <div class="footer__leyend">
+        <small>
+          <i>
+            © 2026 40-20 Café. Todos los derechos reservados.
+            <br><b>
+              Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins
+            </b>
+          </i>
+          Version 1.0.1
+        </small>
+      </div>
+    </footer>
+
+  
+  </div>
+    <audio autoplay loop>
+      <source src="./assets/sounds/bgmusic.mp3" type="audio/mpeg" alt="Música de fondo de la cafetería">
+    </audio>
+  </body>
+</html>
