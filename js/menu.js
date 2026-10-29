@@ -184,8 +184,8 @@ const menuCafeteria = [
   }
 ];
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
-
-contenedorTarjetas.innerHTML = menuCafeteria.map(item => {
+function rellenarCompleto(){
+  let resultadosHtml = menuCafeteria.map(item => {
   return `
     <div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
       <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
@@ -195,5 +195,38 @@ contenedorTarjetas.innerHTML = menuCafeteria.map(item => {
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$${item.precio}</span>
       </div>
     </div>
-  `;
-}).join('');
+  `}).join('');
+  contenedorTarjetas.innerHTML=resultadosHtml;
+};
+function rellenarFiltrado(resultados){
+  let resultadosHtml= resultados.map(item => {
+  return `<div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">${item.nombre}</div>
+        <p class="text-gray-700 text-base">${item.descripcion}</p>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$${item.precio}</span>
+      </div>
+    </div>
+  `}).join('');
+  contenedorTarjetas.innerHTML=resultadosHtml;
+};
+
+rellenarCompleto();
+
+const busquedaInput=document.querySelector("#busqueda")
+busquedaInput.addEventListener('input', (busca) => {
+  const texto = busca.target.value.toLowerCase().trim();
+  if(texto===''){
+    rellenarCompleto();
+    return;
+  }
+  const resultados = menuCafeteria.filter((item) => {
+    const coincideNombre = item.nombre.toLowerCase().includes(texto);
+    const coincideDescripcion = item.descripcion.toLowerCase().includes(texto);
+    const coincideCategoria = item.categoria.toLowerCase().includes(texto);
+
+    return coincideNombre || coincideDescripcion || coincideCategoria;
+  });
+  rellenarFiltrado(resultados);
+});
