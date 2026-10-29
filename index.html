@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8">
   <meta property="og:title" content="40-20 Café">
   <meta property="og:description" content="Bienvenido a 40-20 Café, donde encontrará las mejores bebidas calientes y frías, así como deliciosos postres y snacks">
@@ -15,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://mrpapita2124.github.io/Programacion-Web-2026/">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/index.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
@@ -29,11 +31,7 @@
       </video>
       <div class="header__overlay"></div>
       <div class="header__menu">
-        <div class="menu-toggle">
-          <p class="menu-toggle__bar menu-toggle__bar--top">_</p>
-          <p class="menu-toggle__bar menu-toggle__bar--middle">_</p>
-          <p class="menu-toggle__bar menu-toggle__bar--bottom">_</p>
-        </div>
+        
         
       </div>
       <div class="header__compania">
@@ -53,9 +51,13 @@
 
     
 
-    <aside class="aside">
-      <h2 class="subtitulo">40-20</h2>
-      <ul>
+    <aside class="fixed top-2 bg-black/50 hover:bg-black/70 rounded-r-lg z-10">
+      <button class="menu-toggle flex flex-col gap-1 text-white text-4xl font-bold py-5 px-4 " id="menu-toggle">
+        <p class="menu-toggle__bar menu-toggle__bar--top">_</p>
+        <p class="menu-toggle__bar menu-toggle__bar--middle">_</p>
+        <p class="menu-toggle__bar menu-toggle__bar--bottom">_</p>
+      </button>
+      <ul class="hidden flex flex-col justify-around h-screen text-white text-4xl font-bold py-5 px-4 " id="aside-menu">
         <li><a href="pages/promociones.html">Promociones</a></li>
         <li><a href="pages/eventos.html">Eventos</a></li>
         <li><a href="pages/ubicaciones.html">Ubicaciones</a></li>
@@ -148,11 +150,12 @@
         </small>
       </div>
     </footer>
-
+    
   
   </div>
-    <audio autoplay loop>
-      <source src="./assets/sounds/bgmusic.mp3" type="audio/mpeg" alt="Música de fondo de la cafetería">
-    </audio>
+  <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg" id="theme-toggle" aria-label="Cambiar modo claro/oscuro">
+   
+  </button>
+  
   </body>
 </html>

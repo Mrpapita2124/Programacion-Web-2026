@@ -35,8 +35,7 @@
   --tamanio-fuente-altura: 4vh;
   --tamanio-fuente-ancho: 4vw;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
+[data-theme="dark"]{
     --fondo: #585f38;
     --fondo_alterno: #2a3d3a;
     --fondo_alterno2: #344026;
@@ -44,11 +43,7 @@
     --texto: #e685b1;
     --texto-titulo: #EBD494;
     --selecionado: #ffb700;
-    --radio-borde: 10px;
-    --espaciado: 20px;
-    --tamanio-fuente-altura: 4vh;
-    --tamanio-fuente-ancho: 4vw;
-  }
+  
 }
 @keyframes mover-barra1{
   1%, 20%{
@@ -108,7 +103,6 @@
 
 .header {
   grid-area: header;
-  position: sticky;
   width: 100%;
   height: 15vh;
   display: flex;
@@ -116,11 +110,6 @@
 }
 
 .menu-toggle {
-    display: flex;
-    flex-direction: column; 
-    gap: 4px; 
-    margin-left: 1vw;
-    cursor: pointer;
     p {
       display: inline-block; 
       width: 25px;
@@ -240,6 +229,7 @@
   transform: scaleX(1);
 }
 .nav{
+  top: 0;
     height: 10vh;
     background-color: var(--fondo_marcado);
 
