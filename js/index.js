@@ -31,6 +31,9 @@ themeButton.addEventListener('click', () => {
     themeButton.innerHTML = "🌙";
   }
 });
+
+
 menuButton.addEventListener('click', () => {
-  asideMenu.classList.toggle('hidden');
-})
+  const open = asideMenu.classList.toggle('-translate-x-full') === false;
+  menuButton.setAttribute('aria-expanded', open);
+});

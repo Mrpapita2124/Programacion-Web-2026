@@ -18,10 +18,10 @@ const menuCafeteria = [
     descripcion: "puede ser mineral o natural"
   },
   {
-    nombre: "Chai",
+    nombre: "Horchata",
     categoria: "bebidas frías",
     precio: 45,
-    descripcion: "puede ser en frio o caliente"
+    descripcion: "lecha entera o leche deslactosada"
   },
   {
     nombre: "Matcha",
@@ -183,12 +183,23 @@ const menuCafeteria = [
     descripcion: "Tecate, Indio, Modelo"
   }
 ];
+
+menuCafeteria.forEach(item => {
+  const nombreArchivo = item.nombre
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "_");
+  item.imagen = `../assets/icons/${nombreArchivo}.png`;
+});
+
+
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
-function rellenarCompleto(){
+function rellenarCompleto() {
   let resultadosHtml = menuCafeteria.map(item => {
-  return `
+    return `
     <div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+      <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
         <p class="text-gray-700 text-base">${item.descripcion}</p>
@@ -196,12 +207,12 @@ function rellenarCompleto(){
       </div>
     </div>
   `}).join('');
-  contenedorTarjetas.innerHTML=resultadosHtml;
+  contenedorTarjetas.innerHTML = resultadosHtml;
 };
-function rellenarFiltrado(resultados){
-  let resultadosHtml= resultados.map(item => {
-  return `<div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
-      <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+function rellenarFiltrado(resultados) {
+  let resultadosHtml = resultados.map(item => {
+    return `<div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
+      <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
         <p class="text-gray-700 text-base">${item.descripcion}</p>
@@ -209,15 +220,15 @@ function rellenarFiltrado(resultados){
       </div>
     </div>
   `}).join('');
-  contenedorTarjetas.innerHTML=resultadosHtml;
+  contenedorTarjetas.innerHTML = resultadosHtml;
 };
 
 rellenarCompleto();
 
-const busquedaInput=document.querySelector("#busqueda")
+const busquedaInput = document.querySelector("#busqueda")
 busquedaInput.addEventListener('input', (busca) => {
   const texto = busca.target.value.toLowerCase().trim();
-  if(texto===''){
+  if (texto === '') {
     rellenarCompleto();
     return;
   }
