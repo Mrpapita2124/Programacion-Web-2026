@@ -36,7 +36,7 @@
   --tamanio-fuente-ancho: 4vw;
 }
 
-[data-theme="dark"] {
+body.dark {
   --fondo: #585f38;
   --fondo_alterno: #2a3d3a;
   --fondo_alterno2: #344026;
