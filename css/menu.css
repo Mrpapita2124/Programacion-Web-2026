@@ -1,17 +1,19 @@
+
 :root {
-  --fondo_alterno: #9AD2CB;
-  --fondo_alterno2: #D7EBBA;
-  --fondo: #FEFFBA;
-  --fondo_marcado: #EBD494;
-  --texto: #472836;
-  --texto-titulo: #EBD494;
-  --selecionado: #b38300;
-  --radio-borde: 10px;
-  --espaciado: 20px;
-  --tamanio-fuente-altura: 4vh;
-  --tamanio-fuente-ancho: 4vw;
+    --fondo_alterno: #9AD2CB;
+    --fondo_alterno2: #D7EBBA;
+    --fondo: #FEFFBA;
+    --fondo_marcado: #EBD494;
+    --texto: #472836;
+    --texto-titulo: #EBD494;
+    --selecionado: #b38300;
+    --radio-borde: 10px;
+    --espaciado: 20px;
+    --tamanio-fuente-altura: 4vh;
+    --tamanio-fuente-ancho: 4vw;
 }
-[data-theme="dark"]{
+
+[data-theme="dark"] {
     --fondo: #585f38;
     --fondo_alterno: #2a3d3a;
     --fondo_alterno2: #344026;
@@ -19,37 +21,70 @@
     --texto: #e685b1;
     --texto-titulo: #EBD494;
     --selecionado: #ffb700;
-  
 }
-body{
-  background-color: var(--fondo);
-	width: 100%;
-	height: 100%;
+
+body {
+    background-color: var(--fondo);
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
-.contenedor{
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 20% 1fr 1fr 1fr;
-  grid-template-areas:
-    "header header header header"
-    "nav main main main"; /* Quitamos la línea del footer temporalmente */
-  gap: 10px;
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "nav main main main";
+    gap: 10px;
 }
-#header{
-	grid-area: header;
-	background-color: var(--fondo_marcado);
-	width: 100%;
-	height: 100%;
+
+#header {
+    grid-area: header;
+    background-color: var(--fondo_marcado);
+    width: 100%;
+    height: 100%;
 }
-#nav{
-	grid-area: nav;
-	background-color: var(--fondo_alterno);
+
+#nav {
+    grid-area: nav;
+    background-color: var(--fondo_alterno);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
 }
-#main{
-	grid-area: main;
-	background-color: var(--fondo_alterno2);
+
+#nav button {
+    width: 100%;
+    height: 42px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #f1e9e2;
+    color: #594638;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
 }
-.tarjeta{
-	background-color: var(--fondo_alterno);
+
+#nav button:hover {
+    background: #dfcbbb;
+}
+
+#nav button.active {
+    background: #5b3928;
+    color: white;
+}
+
+#main {
+    grid-area: main;
+    background-color: var(--fondo_alterno2);
+}
+
+.tarjeta {
+    background-color: var(--fondo_alterno);
 }

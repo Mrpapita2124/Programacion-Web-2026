@@ -1,3 +1,4 @@
+
 const menuCafeteria = [
   {
     nombre: "Coldbrew",
@@ -29,7 +30,6 @@ const menuCafeteria = [
     precio: 45,
     descripcion: "puede ser en frio o en caliente"
   },
-
   {
     nombre: "Capucchino",
     categoria: "calientes",
@@ -102,7 +102,6 @@ const menuCafeteria = [
     precio: 40,
     descripcion: "extracto de café con espuma de leche"
   },
-
   {
     nombre: "Cupcakes",
     categoria: "postres",
@@ -139,7 +138,6 @@ const menuCafeteria = [
     precio: 20,
     descripcion: "pz"
   },
-
   {
     nombre: "Jarabes",
     categoria: "extras",
@@ -190,11 +188,16 @@ menuCafeteria.forEach(item => {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/\s+/g, "_");
+
   item.imagen = `../assets/icons/${nombreArchivo}.png`;
 });
 
-
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
+const busquedaInput = document.querySelector("#busqueda");
+const botones = document.querySelectorAll('#nav button');
+
+let categoriaActual = 'todas';
+
 function rellenarCompleto() {
   let resultadosHtml = menuCafeteria.map(item => {
     return `
@@ -207,8 +210,10 @@ function rellenarCompleto() {
       </div>
     </div>
   `}).join('');
+
   contenedorTarjetas.innerHTML = resultadosHtml;
-};
+}
+
 function rellenarFiltrado(resultados) {
   let resultadosHtml = resultados.map(item => {
     return `<div class="tarjeta max-w-sm rounded overflow-hidden shadow-lg">
@@ -220,24 +225,46 @@ function rellenarFiltrado(resultados) {
       </div>
     </div>
   `}).join('');
+
   contenedorTarjetas.innerHTML = resultadosHtml;
-};
+}
 
-rellenarCompleto();
+function filtrar() 
+{
+  const texto = busquedaInput.value.toLowerCase().trim();
 
-const busquedaInput = document.querySelector("#busqueda")
-busquedaInput.addEventListener('input', (busca) => {
-  const texto = busca.target.value.toLowerCase().trim();
-  if (texto === '') {
+  if (categoriaActual === 'todas' && texto === '') 
+  {
     rellenarCompleto();
     return;
   }
-  const resultados = menuCafeteria.filter((item) => {
+
+  const resultados = menuCafeteria.filter(item => 
+  {
+    const coincideCategoria = categoriaActual === 'todas' || item.categoria === categoriaActual;
+
     const coincideNombre = item.nombre.toLowerCase().includes(texto);
     const coincideDescripcion = item.descripcion.toLowerCase().includes(texto);
-    const coincideCategoria = item.categoria.toLowerCase().includes(texto);
 
-    return coincideNombre || coincideDescripcion || coincideCategoria;
+    return coincideCategoria && (coincideNombre || coincideDescripcion);
   });
+
   rellenarFiltrado(resultados);
+}
+
+busquedaInput.addEventListener('input', filtrar);
+
+botones.forEach(boton => 
+  {
+    boton.addEventListener('click', () => 
+    {
+    categoriaActual = boton.dataset.categoria;
+
+    botones.forEach(b => b.classList.remove('active'));
+    boton.classList.add('active');
+
+    filtrar();
+  });
 });
+
+rellenarCompleto();
