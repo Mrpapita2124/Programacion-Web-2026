@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/botonTema.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/formulario.css">
+</head>
+
+<body class="flex items-center justify-center h-screen">
+  <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data" class="formulario ">
+    <fieldset class="formulario__fieldset flex flex-col gap-7 p-4 items-start justify-center rounded-[10px] shadow-md">
+      <legend class="text-lg font-bold text-center ">Crear cuenta</legend>
+      <a href="../pages/menu.html" class="text-blue-500 hover:text-blue-700"><svg xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left preview-icon">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg></a>
+      <div class="flex flex-row gap-2 w-full">
+        <div class="flex flex-col gap-2 w-full">
+          <label for="nombre">Nombres </label>
+          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text" id="inp_nombre" placeholder="Ingrese su nombre" required>
+        </div>
+        <div class="flex flex-col gap-2 w-full">
+          <label for="apellidos">Apellidos </label>
+          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text" id="inp_apellidos" placeholder="Ingrese sus apellidos" required>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2 w-full">
+        <label for="email">Correo electronico</label>
+        <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          type="email" id="inp_email" placeholder="Ingrese su correo electronico" required>
+      </div>
+
+      <div class="flex flex-col gap-2 w-full">
+        <label for="password">Constraseña:</label>
+        <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          type="password" id="inp_password" placeholder="Ingrese su Constraseña" required>
+      </div>
+
+
+
+      <div class="flex flex-row gap-2 w-full">
+        <div class="flex flex-col gap-2 w-full">
+          <label for="estado">Estado</label>
+          <select class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            name="estado" id="estado" required>
+            <option value="Default" selected>Seleccione un estado</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="Baja California">Baja California</option>
+            <option value="Baja California Sur">Baja California Sur</option>
+            <option value="Campeche">Campeche</option>
+            <option value="Chiapas">Chiapas</option>
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Ciudad de México">Ciudad de México</option>
+            <option value="Coahuila">Coahuila</option>
+            <option value="Colima">Colima</option>
+            <option value="Durango">Durango</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Hidalgo">Hidalgo</option>
+            <option value="Jalisco">Jalisco</option>
+            <option value="México">México</option>
+            <option value="Michoacán">Michoacán</option>
+            <option value="Morelos">Morelos</option>
+            <option value="Nayarit">Nayarit</option>
+            <option value="Nuevo León">Nuevo León</option>
+            <option value="Oaxaca">Oaxaca</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Querétaro">Querétaro</option>
+            <option value="Quintana Roo">Quintana Roo</option>
+            <option value="San Luis Potosí">San Luis Potosí</option>
+            <option value="Sinaloa">Sinaloa</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Tabasco">Tabasco</option>
+            <option value="Tamaulipas">Tamaulipas</option>
+            <option value="Tlaxcala">Tlaxcala</option>
+            <option value="Veracruz">Veracruz</option>
+            <option value="Yucatán">Yucatán</option>
+            <option value="Zacatecas">Zacatecas</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-2 w-full">
+          <label for="inp-tel">Telefono(10 Digitos):</label>
+          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="tel" id="inp-tel" name="telefono" max length="10" placeholder="6120000000" pattern="[0-9]{10}"
+            required>
+        </div>
+
+      </div>
+
+      <div>
+        <input class="form-checkbox" type="checkbox" id="inp-terminos" name="terminos" value="aceptar" required>
+        <label for="inp-terminos">Acepto los términos y condiciones</label>
+        <br>
+        <input class="form-checkbox" type="checkbox" id="inp-notificaciones" name="notificaciones" value="aceptar">
+        <label for="inp-notificaciones">Acepto recibir notificaciones de promociones a mi correo electrónico y
+          celular</label>
+      </div>
+      <div class="flex flex-row gap-2 w-full">
+        <button type="submit">Enviar</button>
+        <button type="reset">Restablecer</button>
+      </div>
+
+    </fieldset>
+  </form>
+  <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
+    id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️
+
+  </button>
+</body>
+
+</html>

@@ -205,7 +205,7 @@ function rellenarCompleto() {
       <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
-        <p class="text-gray-700 text-base">${item.descripcion}</p>
+        <p class="text-base">${item.descripcion}</p>
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$${item.precio}</span>
       </div>
     </div>
@@ -220,7 +220,7 @@ function rellenarFiltrado(resultados) {
       <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
-        <p class="text-gray-700 text-base">${item.descripcion}</p>
+        <p class="text-base">${item.descripcion}</p>
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$${item.precio}</span>
       </div>
     </div>
@@ -229,18 +229,15 @@ function rellenarFiltrado(resultados) {
   contenedorTarjetas.innerHTML = resultadosHtml;
 }
 
-function filtrar() 
-{
+function filtrar() {
   const texto = busquedaInput.value.toLowerCase().trim();
 
-  if (categoriaActual === 'todas' && texto === '') 
-  {
+  if (categoriaActual === 'todas' && texto === '') {
     rellenarCompleto();
     return;
   }
 
-  const resultados = menuCafeteria.filter(item => 
-  {
+  const resultados = menuCafeteria.filter(item => {
     const coincideCategoria = categoriaActual === 'todas' || item.categoria === categoriaActual;
 
     const coincideNombre = item.nombre.toLowerCase().includes(texto);
@@ -254,10 +251,8 @@ function filtrar()
 
 busquedaInput.addEventListener('input', filtrar);
 
-botones.forEach(boton => 
-  {
-    boton.addEventListener('click', () => 
-    {
+botones.forEach(boton => {
+  boton.addEventListener('click', () => {
     categoriaActual = boton.dataset.categoria;
 
     botones.forEach(b => b.classList.remove('active'));

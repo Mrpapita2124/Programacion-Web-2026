@@ -1,0 +1,21 @@
+/* Variables globales vinculadas desde variables.css */
+
+
+body {
+  background-color: var(--fondo_marcado);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+}
+
+.formulario__fieldset {
+  background-color: var(--fondo_alterno);
+  padding: var(--espaciado);
+}
+
+label {
+  color: var(--texto);
+  font-size: calc(var(--tamanio-fuente-altura) * 0.6);
+  margin-bottom: 5px;
+}

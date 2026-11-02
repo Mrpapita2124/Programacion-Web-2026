@@ -1,27 +1,5 @@
+/* Variables globales vinculadas desde variables.css */
 
-:root {
-    --fondo_alterno: #9AD2CB;
-    --fondo_alterno2: #D7EBBA;
-    --fondo: #FEFFBA;
-    --fondo_marcado: #EBD494;
-    --texto: #472836;
-    --texto-titulo: #EBD494;
-    --selecionado: #b38300;
-    --radio-borde: 10px;
-    --espaciado: 20px;
-    --tamanio-fuente-altura: 4vh;
-    --tamanio-fuente-ancho: 4vw;
-}
-
-[data-theme="dark"] {
-    --fondo: #585f38;
-    --fondo_alterno: #2a3d3a;
-    --fondo_alterno2: #344026;
-    --fondo_marcado: #52472b;
-    --texto: #e685b1;
-    --texto-titulo: #EBD494;
-    --selecionado: #ffb700;
-}
 
 body {
     background-color: var(--fondo);
@@ -29,6 +7,8 @@ body {
     height: 100%;
     margin: 0;
     font-family: 'Inconsolata', monospace;
+    color: var(--texto);
+
 }
 
 .contenedor {
@@ -52,8 +32,6 @@ body {
 #nav {
     grid-area: nav;
     background-color: var(--fondo_alterno);
-    display: flex;
-    flex-direction: column;
     gap: 10px;
     padding: 15px;
 }
@@ -83,7 +61,6 @@ body {
 
 #main {
     grid-area: main;
-    background-color: var(--fondo_alterno2);
 }
 
 .tarjeta {

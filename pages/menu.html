@@ -1,43 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/menu.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/botonTema.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/menu.css">
 
-    <link rel="stylesheet" href="../css/menu.css">
-
-    <title>Menu de Productos</title>
+  <title>Menu de Productos</title>
 </head>
 
 <body class="w-full h-full m-0">
 
-    <div class="contenedor">
+  <div class="contenedor">
 
-        <header class="flex justify-around items-center p-4 gap-4" id="header">
-        
-          <input type="text" id="busqueda" name="usuario" placeholder="Buscar Producto" class="w-1/2 h-10 rounded placeholder:opacity-50 pl-3">
-        </header>
+    <header class="flex justify-around items-center p-1 gap-4" id="header">
+      <a href="../index.html">
+        <img src="../assets/img/logo.png" alt="Logo de 40-20 Café" class="h-16">
+      </a>
+      <input type="text" id="busqueda" name="usuario" placeholder="Buscar Producto"
+        class="w-1/2 h-10 rounded placeholder:opacity-50 pl-3">
+      <a href="../pages/formularioRegistro.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-user preview-icon">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      </a>
+    </header>
 
-        <nav id="nav">
-            <button data-categoria="todas" class="active">Todas</button>
-            <button data-categoria="bebidas frías">Bebidas frías</button>
-            <button data-categoria="calientes">Calientes</button>
-            <button data-categoria="postres">Postres</button>
-            <button data-categoria="extras">Extras</button>
-        </nav>
+    <nav id="nav">
+      <div class="sticky top-7 flex flex-col gap-2">
+        <button data-categoria="todas" class="active">Todas</button>
+        <button data-categoria="bebidas frías">Bebidas frías</button>
+        <button data-categoria="calientes">Calientes</button>
+        <button data-categoria="postres">Postres</button>
+        <button data-categoria="extras">Extras</button>
+      </div>
+    </nav>
 
-        <main id="main">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="contenedor-tarjetas">
-            </div>
-        </main>
+    <main id="main">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="contenedor-tarjetas">
+      </div>
+    </main>
 
-    </div>
+  </div>
+  <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
+    id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️
 
+  </button>
 </body>
 
 </html>
