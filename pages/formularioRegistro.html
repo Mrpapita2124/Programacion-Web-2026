@@ -3,7 +3,8 @@
 
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../js/botonTema.js" defer></script>
+
+  <script type="module" src="../js/formularioRegistro.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrarse</title>
@@ -12,7 +13,7 @@
 </head>
 
 <body class="flex items-center justify-center h-screen">
-  <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data" class="formulario ">
+  <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data" class="formulario " novalidate>
     <fieldset class="formulario__fieldset flex flex-col gap-7 p-4 items-start justify-center rounded-[10px] shadow-md">
       <legend class="text-lg font-bold text-center ">Crear cuenta</legend>
       <a href="../pages/formularioInicioSesion.html" class="text-blue-500 hover:text-blue-700"><svg
@@ -26,24 +27,29 @@
         <div class="flex flex-col gap-2 w-full">
           <label for="nombre">Nombres </label>
           <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            type="text" id="inp_nombre" placeholder="Ingrese su nombre" required>
+            type="text" id="inp_nombre" name="nombre" placeholder="Ingrese su nombre">
+          <span class="error-campo" data-error-para="nombre"></span>
         </div>
         <div class="flex flex-col gap-2 w-full">
           <label for="apellidos">Apellidos </label>
           <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            type="text" id="inp_apellidos" placeholder="Ingrese sus apellidos" required>
+            type="text" id="inp_apellidos" name="apellidos" placeholder="Ingrese sus apellidos">
+          <span class="error-campo" data-error-para="apellidos"></span>
         </div>
       </div>
       <div class="flex flex-col gap-2 w-full">
         <label for="email">Correo electronico</label>
         <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-          type="email" id="inp_email" placeholder="Ingrese su correo electronico" required>
+          type="email" id="inp_email" name="email" placeholder="Ingrese su correo electronico">
+        <span class="error-campo" data-error-para="email"></span>
       </div>
 
       <div class="flex flex-col gap-2 w-full">
         <label for="password">Constraseña:</label>
         <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-          type="password" id="inp_password" placeholder="Ingrese su Constraseña" required>
+          type="password" id="inp_password" name="password"
+          placeholder="8 caracteres con una letra y un número, sin caracteres especiales ni espacios">
+        <span class="error-campo" data-error-para="password"></span>
       </div>
 
 
@@ -52,7 +58,7 @@
         <div class="flex flex-col gap-2 w-full">
           <label for="estado">Estado</label>
           <select class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            name="estado" id="estado" required>
+            name="estado" id="estado">
             <option value="Default" selected>Seleccione un estado</option>
             <option value="Aguascalientes">Aguascalientes</option>
             <option value="Baja California">Baja California</option>
@@ -87,19 +93,22 @@
             <option value="Yucatán">Yucatán</option>
             <option value="Zacatecas">Zacatecas</option>
           </select>
+          <span class="error-campo" data-error-para="estado"></span>
         </div>
         <div class="flex flex-col gap-2 w-full">
           <label for="inp-tel">Telefono(10 Digitos):</label>
           <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            type="tel" id="inp-tel" name="telefono" max length="10" placeholder="6120000000" pattern="[0-9]{10}"
-            required>
+            type="tel" id="inp-tel" name="telefono" placeholder="6120000000">
+          <span class="error-campo" data-error-para="telefono"></span>
+
         </div>
 
       </div>
 
       <div>
-        <input class="form-checkbox" type="checkbox" id="inp-terminos" name="terminos" value="aceptar" required>
+        <input class="form-checkbox" type="checkbox" id="inp-terminos" name="terminos" value="aceptar">
         <label for="inp-terminos">Acepto los términos y condiciones</label>
+        <span class="error-campo" data-error-para="terminos"></span>
         <br>
         <input class="form-checkbox" type="checkbox" id="inp-notificaciones" name="notificaciones" value="aceptar">
         <label for="inp-notificaciones">Acepto recibir notificaciones de promociones a mi correo electrónico y

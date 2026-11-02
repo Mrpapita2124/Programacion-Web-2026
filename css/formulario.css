@@ -42,3 +42,14 @@ span {
 legend {
   color: var(--texto);
 }
+
+.error-campo {
+  color: #dc2626;
+  font-size: calc(var(--tamanio-fuente-altura) * 0.4);
+  font-weight: 500;
+  display: block;
+}
+
+body.dark .error-campo {
+  color: #f87171;
+}

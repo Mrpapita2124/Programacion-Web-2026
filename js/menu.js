@@ -1,4 +1,8 @@
 
+import { iniciarBotonTema } from './botonTema.js';
+
+iniciarBotonTema();
+
 const menuCafeteria = [
   {
     nombre: "Coldbrew",

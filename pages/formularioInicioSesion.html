@@ -3,7 +3,8 @@
 
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../js/botonTema.js" defer></script>
+
+  <script type="module" src="../js/formularioInicioSesion.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión</title>
@@ -12,7 +13,7 @@
 </head>
 
 <body class="flex items-center justify-center h-screen">
-  <form action="procesar_formulario.php" method="POST" class="formulario w-full max-w-md p-4">
+  <form action="procesar_formulario.php" method="POST" class="formulario w-full max-w-md p-4" novalidate>
     <fieldset class="formulario__fieldset flex flex-col gap-7 p-6 items-start justify-center rounded-[10px] shadow-md w-full">
       <legend class="text-lg font-bold text-center">Iniciar sesión</legend>
 
@@ -28,13 +29,15 @@
       <div class="flex flex-col gap-2 w-full">
         <label for="inp_email">Correo electrónico</label>
         <input class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-          type="email" id="inp_email" name="email" placeholder="Ingrese su correo electrónico" required>
+          type="email" id="inp_email" name="email" placeholder="Ingrese su correo electrónico">
+        <span class="error-campo" data-error-para="email"></span>
       </div>
 
       <div class="flex flex-col gap-2 w-full">
         <label for="inp_password">Contraseña:</label>
         <input class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-          type="password" id="inp_password" name="password" placeholder="Ingrese su contraseña" required>
+          type="password" id="inp_password" name="password" placeholder="Ingrese su contraseña">
+        <span class="error-campo" data-error-para="password"></span>
       </div>
 
       <div class="flex flex-row gap-2 w-full">
