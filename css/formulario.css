@@ -19,3 +19,26 @@ label {
   font-size: calc(var(--tamanio-fuente-altura) * 0.6);
   margin-bottom: 5px;
 }
+
+span {
+  color: var(--texto);
+}
+
+.formulario button {
+  background-color: var(--texto);
+  color: var(--fondo);
+  border: 1px solid var(--texto);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.formulario button:hover {
+  opacity: 0.85;
+}
+
+legend {
+  color: var(--texto);
+}
