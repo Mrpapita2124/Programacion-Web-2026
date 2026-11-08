@@ -3,7 +3,6 @@
 
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script type="module" src="../js/formularioRegistro.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,54 +11,59 @@
   <link rel="stylesheet" href="../css/formulario.css">
 </head>
 
-<body class="flex items-center justify-center h-screen">
-  <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data" class="formulario " novalidate>
-    <fieldset class="formulario__fieldset flex flex-col gap-7 p-4 items-start justify-center rounded-[10px] shadow-md">
-      <legend class="text-lg font-bold text-center ">Crear cuenta</legend>
-      <a href="../pages/formularioInicioSesion.html" class="text-blue-500 hover:text-blue-700"><svg
-          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-arrow-left preview-icon">
-          <path d="m12 19-7-7 7-7" />
-          <path d="M19 12H5" />
-        </svg></a>
-      <div class="flex flex-row gap-2 w-full">
-        <div class="flex flex-col gap-2 w-full">
-          <label for="nombre">Nombres </label>
-          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+<body class="flex items-center justify-center min-h-screen py-6">
+  <form action="procesar_formulario.php" method="POST" enctype="multipart/form-data" class="formulario w-full max-w-lg p-4" novalidate>
+    <fieldset class="formulario__fieldset flex flex-col gap-4 p-6 items-start justify-center rounded-[10px] shadow-md w-full">
+      
+      <div class="flex items-center w-full relative mb-1">
+        <a href="../pages/formularioInicioSesion.html" class="text-blue-500 hover:text-blue-700 absolute left-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-left preview-icon">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+        </a>
+        <legend class="text-2xl font-bold text-center w-full">Crear cuenta</legend>
+      </div>
+
+      <br>
+      <div class="flex flex-row gap-3 w-full">
+        <div class="flex flex-col gap-1 w-full">
+          <label for="inp_nombre">Nombres</label>
+          <input class="border border-gray-300 rounded py-1.5 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             type="text" id="inp_nombre" name="nombre" placeholder="Ingrese su nombre">
           <span class="error-campo" data-error-para="nombre"></span>
         </div>
-        <div class="flex flex-col gap-2 w-full">
-          <label for="apellidos">Apellidos </label>
-          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <div class="flex flex-col gap-1 w-full">
+          <label for="inp_apellidos">Apellidos</label>
+          <input class="border border-gray-300 rounded py-1.5 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             type="text" id="inp_apellidos" name="apellidos" placeholder="Ingrese sus apellidos">
           <span class="error-campo" data-error-para="apellidos"></span>
         </div>
       </div>
-      <div class="flex flex-col gap-2 w-full">
-        <label for="email">Correo electronico</label>
-        <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-          type="email" id="inp_email" name="email" placeholder="Ingrese su correo electronico">
+
+      <div class="flex flex-col gap-1 w-full">
+        <label for="inp_email">Correo electrónico</label>
+        <input class="border border-gray-300 rounded py-1.5 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          type="email" id="inp_email" name="email" placeholder="Ingrese su correo electrónico">
         <span class="error-campo" data-error-para="email"></span>
       </div>
 
-      <div class="flex flex-col gap-2 w-full">
-        <label for="password">Constraseña:</label>
-        <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+      <div class="flex flex-col gap-1 w-full">
+        <label for="inp_password">Contraseña:</label>
+        <input class="border border-gray-300 rounded py-1.5 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
           type="password" id="inp_password" name="password"
-          placeholder="8 caracteres con una letra y un número, sin caracteres especiales ni espacios">
+          placeholder="8 caracteres con una letra y un número">
         <span class="error-campo" data-error-para="password"></span>
       </div>
 
-
-
-      <div class="flex flex-row gap-2 w-full">
-        <div class="flex flex-col gap-2 w-full">
+      <div class="flex flex-row gap-3 w-full">
+        <div class="flex flex-col gap-1 w-full">
           <label for="estado">Estado</label>
-          <select class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          <select class="border border-gray-300 rounded py-1.5 px-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             name="estado" id="estado">
-            <option value="Default" selected>Seleccione un estado</option>
+            <option value="Default text" selected>Seleccione un estado</option>
             <option value="Aguascalientes">Aguascalientes</option>
             <option value="Baja California">Baja California</option>
             <option value="Baja California Sur">Baja California Sur</option>
@@ -95,35 +99,44 @@
           </select>
           <span class="error-campo" data-error-para="estado"></span>
         </div>
-        <div class="flex flex-col gap-2 w-full">
-          <label for="inp-tel">Telefono(10 Digitos):</label>
-          <input class="border border-gray-300 rounded py-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <div class="flex flex-col gap-1 w-full">
+          <label for="inp-tel">Teléfono (10 Dígitos):</label>
+          <input class="border border-gray-300 rounded py-1.5 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             type="tel" id="inp-tel" name="telefono" placeholder="6120000000">
           <span class="error-campo" data-error-para="telefono"></span>
-
         </div>
-
       </div>
 
-      <div>
-        <input class="form-checkbox" type="checkbox" id="inp-terminos" name="terminos" value="aceptar">
-        <label for="inp-terminos">Acepto los términos y condiciones</label>
+      <div class="flex flex-col gap-2 w-full text-sm mt-1">
+        <div class="flex items-start gap-2">
+          <input class="form-checkbox mt-1" type="checkbox" id="inp-terminos" name="terminos" value="aceptar">
+          <label for="inp-terminos" class="text-xs">Acepto los términos y condiciones</label>
+        </div>
         <span class="error-campo" data-error-para="terminos"></span>
-        <br>
-        <input class="form-checkbox" type="checkbox" id="inp-notificaciones" name="notificaciones" value="aceptar">
-        <label for="inp-notificaciones">Acepto recibir notificaciones de promociones a mi correo electrónico y
-          celular</label>
+        
+        <div class="flex items-start gap-2">
+          <input class="form-checkbox mt-1" type="checkbox" id="inp-notificaciones" name="notificaciones" value="aceptar">
+          <label for="inp-notificaciones" class="text-xs">Acepto recibir notificaciones de promociones</label>
+        </div>
       </div>
-      <div class="flex flex-row gap-2 w-full">
-        <button type="submit">Enviar</button>
-        <button type="reset">Restablecer</button>
+
+      <div class="w-full mt-2">
+        <button type="submit" class="w-full py-2">Enviar</button>
+      </div>
+
+      <div class="flex flex-row justify-between items-center w-full text-sm mt-1">
+        <div>
+          <span>¿Ya tienes cuenta? </span>
+          <a href="formularioInicioSesion.html" class="text-blue-500 hover:text-blue-700 underline">Inicia sesión</a>
+        </div>
+        <button type="reset" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded text-xs transition">Restablecer</button>
       </div>
 
     </fieldset>
   </form>
+
   <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
     id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️
-
   </button>
 </body>
 
