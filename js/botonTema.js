@@ -2,17 +2,33 @@ export function iniciarBotonTema() {
   const themeButton = document.querySelector('#theme-toggle');
   if (!themeButton) return;
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  const savedPreferences = JSON.parse(
+    localStorage.getItem('userPreferences')
+  ) || {};
+
+  const savedTheme = savedPreferences.theme;
+
+  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) 
+  {
     document.body.classList.add('dark');
     themeButton.innerHTML = "🌙";
-  } else {
+
+  } 
+  else 
+  {
+    document.body.classList.remove('dark');
     themeButton.innerHTML = "☀️";
   }
 
   themeButton.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark');
     themeButton.innerHTML = isDark ? "🌙" : "☀️";
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    const preferences = 
+    {
+      theme: isDark ? 'dark' : 'light'
+    };
+
+    localStorage.setItem('userPreferences', JSON.stringify(preferences));
   });
 }
