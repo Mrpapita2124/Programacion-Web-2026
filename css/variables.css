@@ -15,11 +15,16 @@
 }
 
 body.dark {
-  --fondo: #585f38;
-  --fondo_alterno: #2a3d3a;
-  --fondo_alterno2: #344026;
-  --fondo_marcado: #52472b;
-  --texto: #e685b1;
-  --texto-titulo: #EBD494;
-  --selecionado: #ffb700;
+  --fondo: #181311;
+  --fondo_alterno: #29201a;
+  --fondo_alterno2: #1f2d27;
+  --fondo_marcado: #241b16;
+  --texto: #f5ede3;
+  --texto-titulo: #f6c475;
+  --selecionado: #2dd4bf;
+}
+
+.footer {
+  background-color: var(--fondo_alterno);
+  color: var(--texto);
 }

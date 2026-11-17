@@ -1,0 +1,13 @@
+body {
+  background-color: var(--fondo);
+  font-family: 'Inconsolata', monospace;
+  color: var(--texto);
+}
+
+#header {
+  background-color: var(--fondo_marcado);
+}
+
+.tarjeta {
+  background-color: var(--fondo_alterno);
+}

@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="../css/formulario.css">
 </head>
 
-<body class="flex items-center justify-center h-screen">
-  <form action="procesar_formulario.php" method="POST" class="formulario w-full max-w-md p-4" novalidate>
+<body class="flex flex-col justify-between items-center min-h-screen m-0">
+  <main class="flex-1 flex items-center justify-center w-full p-4 py-8">
+    <form action="procesar_formulario.php" method="POST" class="formulario w-full max-w-md p-4" novalidate>
     <fieldset class="formulario__fieldset flex flex-col gap-5 p-6 items-start justify-center rounded-[10px] shadow-md w-full">
       
       <div class="flex items-center w-full relative mb-2">
@@ -57,6 +58,49 @@
 
     </fieldset>
   </form>
+  </main>
+
+  <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t border-black/10 dark:border-white/10" style="background-color: var(--fondo_alterno); color: var(--texto);">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-center sm:items-start gap-8 text-center sm:text-left">
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Sobre Nosotros</h3>
+        <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+          <li>
+            <a href="trabaja_con_nosotros.html" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Trabaja con nosotros
+            </a>
+          </li>
+          <li>
+            <a href="ubicaciones.html" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Ubicaciones
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Atención al Cliente</h3>
+        <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+          <li>
+            <a href="tel:+526121310955" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition" title="Número de contacto">
+              Contáctanos
+            </a>
+          </li>
+          <li>
+            <a href="mailto:azariascollins20@gmail.com" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Facturas electrónicas
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
+      <p class="italic">© 2026 40-20 Café. Todos los derechos reservados.</p>
+      <p class="font-bold my-1">Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins</p>
+      <p class="text-xs opacity-75">Versión 1.0.1</p>
+    </div>
+  </footer>
 
   <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
     id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️

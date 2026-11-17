@@ -3,6 +3,11 @@
 
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <meta charset="UTF-8">
   <meta property="og:title" content="40-20 Café">
   <meta property="og:description"
@@ -52,17 +57,19 @@
 
     <nav class="nav">
       <ul class="nav__lista">
-        <li><a href="pages/menu.html" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
-              width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true">
+        <li><a href="pages/menu.html?categoria=calientes" target="_blank" rel="noopener noreferrer"><svg
+              xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon"
+              aria-hidden="true">
               <path d="M10 2v2" />
               <path d="M14 2v2" />
               <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
               <path d="M6 2v2" />
             </svg></a></li>
-        <li><a href="pages/menu.html" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
-              width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" class="nav__icon" aria-hidden="true">
+        <li><a href="pages/menu.html?categoria=bebidas frías" target="_blank" rel="noopener noreferrer"><svg
+              xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon"
+              aria-hidden="true">
               <path d="m10 20-1.25-2.5L6 18" />
               <path d="M10 4 8.75 6.5 6 6" />
               <path d="m14 20 1.25-2.5L18 18" />
@@ -76,9 +83,10 @@
               <path d="m7 21 3-6-1.5-3" />
               <path d="m7 3 3 6h4" />
             </svg></a></li>
-        <li><a href="#menuAlimentos"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="nav__icon" aria-hidden="true">
+        <li><a href="pages/menu.html?categoria=postres" target="_blank" rel="noopener noreferrer"><svg
+              xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon"
+              aria-hidden="true">
               <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
               <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" />
               <path d="M2 21h20" />
@@ -89,9 +97,10 @@
               <path d="M12 4h.01" />
               <path d="M17 4h.01" />
             </svg></a></li>
-        <li><a href="#menuBebidas"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="nav__icon" aria-hidden="true">
+        <li><a href="pages/menu.html?categoria=extras" target="_blank" rel="noopener noreferrer"><svg
+              xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav__icon"
+              aria-hidden="true">
               <path d="M8 2h8" />
               <path
                 d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2" />
@@ -215,57 +224,72 @@
 
 
 
-      <section id="descripcion" class="max-w-3xl mx-auto px-6 py-10 text-left">
-        <h2 class="subtitulo_descripcion text-2xl font-bold mb-4">Sobre Nuestra Experiencia</h2>
-        <p class="text-lg mb-3">En 40-20 Café nos apasiona crear un espacio acogedor donde cada taza cuenta una historia
-          única.</p>
-        <p class="text-base mb-3">Disfruta de nuestra exclusiva selección de bebidas artesanales frías y calientes,
-          acompañadas de postres recién horneados y snacks irresistibles.</p>
-        <p class="text-base">Seleccionamos cuidadosamente ingredientes de la más alta calidad para garantizar un sabor
-          excepcional en cada visita.</p>
+      <section id="descripcion" class="max-w-4xl !mx-auto px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 text-left">
+        <h2 class="subtitulo_descripcion text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Sobre Nuestra
+          Experiencia</h2>
+        <p
+          class="text-lg sm:text-xl md:text-2xl font-medium sm:font-semibold leading-relaxed mb-4 sm:mb-6 text-amber-950 dark:text-amber-100">
+          En <span class="text-amber-700 dark:text-amber-400 font-bold">40-20 Café</span> nos apasiona crear un espacio
+          acogedor donde cada taza cuenta una historia única.
+        </p>
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-5 text-stone-800 dark:text-stone-300">
+          Disfruta de nuestra exclusiva selección de bebidas artesanales frías y calientes, acompañadas de postres
+          recién horneados y snacks irresistibles.
+        </p>
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed text-stone-700 dark:text-stone-300">
+          Seleccionamos cuidadosamente ingredientes de la más alta calidad para garantizar un sabor excepcional en cada
+          visita.
+        </p>
       </section>
 
 
     </main>
 
-    <footer class="footer">
-
-      <div class="footer__sections">
-        <div class="footer__section">
-          <h3>Sobre Nosotros</h3>
-          <small>
-            <ul class="submenu">
-              <li><a href="pages/trabaja_con_nosotros.html"
-                  class="text-gray-700 hover:text-black font-semibold transition">Trabaja con nosotros</a></li>
-              <li><a href="pages/ubicaciones.html"
-                  class="text-gray-700 hover:text-black font-semibold transition">Ubicaciones</a></li>
-            </ul>
-          </small>
+    <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t border-black/10 dark:border-white/10" style="background-color: var(--fondo_alterno); color: var(--texto);">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-center sm:items-start gap-8 text-center sm:text-left">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Sobre Nosotros</h3>
+          <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+            <li>
+              <a href="pages/trabaja_con_nosotros.html"
+                class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+                Trabaja con nosotros
+              </a>
+            </li>
+            <li>
+              <a href="pages/ubicaciones.html"
+                class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+                Ubicaciones
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div class="footer__section">
-          <h3>Atención al Cliente</h3>
-          <small>
-            <ul class="submenu">
-              <li><a href="tel:+526121310955" class="text-gray-700 hover:text-black font-semibold transition"
-                  title="Número de contacto">Contáctanos</a></li>
-              <li><a href="mailto:azariascollins20@gmail.com"
-                  class="text-gray-700 hover:text-black font-semibold transition">Facturas electrónicas</a></li>
-            </ul>
-          </small>
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Atención al Cliente</h3>
+          <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+            <li>
+              <a href="tel:+526121310955"
+                class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition"
+                title="Número de contacto">
+                Contáctanos
+              </a>
+            </li>
+            <li>
+              <a href="mailto:azariascollins20@gmail.com"
+                class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+                Facturas electrónicas
+              </a>
+            </li>
+          </ul>
         </div>
-
       </div>
-      <div class="footer__leyend">
-        <small>
-          <i>
-            © 2026 40-20 Café. Todos los derechos reservados.
-            <br><b>
-              Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins
-            </b>
-          </i>
-          <br>Versión 1.0.1
-        </small>
+
+      <div
+        class="mt-8 pt-6 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
+        <p class="italic">© 2026 40-20 Café. Todos los derechos reservados.</p>
+        <p class="font-bold my-1">Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins</p>
+        <p class="text-xs opacity-75">Versión 1.0.1</p>
       </div>
     </footer>
 

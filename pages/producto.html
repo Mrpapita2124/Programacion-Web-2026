@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script type="module" src="../js/producto.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/producto.css">
+
+  <title>Detalle de Producto - 40-20 Café</title>
+</head>
+
+<body class="w-full min-h-screen m-0 flex flex-col">
+
+  <header class="flex justify-around items-center p-3 gap-4 shadow-sm" id="header">
+    <a href="../index.html">
+      <img src="../assets/img/logo.png" alt="Logo de 40-20 Café" class="h-16">
+    </a>
+
+    <input type="text" id="busqueda" name="usuario" placeholder="Buscar Producto..."
+      class="w-1/2 h-10 rounded-lg placeholder:opacity-50 pl-4 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+
+    <a href="../pages/formularioInicioSesion.html"
+      class="p-2.5 rounded-full bg-black/5 hover:bg-black/10 transition flex items-center justify-center"
+      aria-label="Iniciar sesión">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-user preview-icon">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 md:p-8">
+
+    <div class="mb-6">
+      <a href="menu.html"
+        class="inline-flex items-center gap-2 text-sm sm:text-base font-semibold hover:opacity-75 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        Volver al menú
+      </a>
+    </div>
+
+    <section id="contenedor-producto" class="w-full mb-12 sm:mb-16">
+      <p class="text-center w-full py-12">Cargando producto...</p>
+    </section>
+
+    <section class="w-full mt-8">
+      <div class="border-t border-black/10 dark:border-white/10 pt-8 mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-2">Recomendaciones</h2>
+        <p class="text-sm sm:text-base opacity-75" id="subtitulo-recomendaciones">
+          Otros productos que te podrían gustar
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full"
+        id="contenedor-recomendaciones">
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t border-black/10 dark:border-white/10" style="background-color: var(--fondo_alterno); color: var(--texto);">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-center sm:items-start gap-8 text-center sm:text-left">
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Sobre Nosotros</h3>
+        <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+          <li>
+            <a href="trabaja_con_nosotros.html" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Trabaja con nosotros
+            </a>
+          </li>
+          <li>
+            <a href="ubicaciones.html" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Ubicaciones
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Atención al Cliente</h3>
+        <ul class="flex flex-col gap-2 text-sm sm:text-base font-semibold">
+          <li>
+            <a href="tel:+526121310955" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition" title="Número de contacto">
+              Contáctanos
+            </a>
+          </li>
+          <li>
+            <a href="mailto:azariascollins20@gmail.com" class="opacity-80 hover:opacity-100 hover:text-[var(--selecionado)] transition">
+              Facturas electrónicas
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
+      <p class="italic">© 2026 40-20 Café. Todos los derechos reservados.</p>
+      <p class="font-bold my-1">Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins</p>
+      <p class="text-xs opacity-75">Versión 1.0.1</p>
+    </div>
+  </footer>
+
+  <button
+    class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
+    id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️
+  </button>
+
+</body>
+
+</html>
