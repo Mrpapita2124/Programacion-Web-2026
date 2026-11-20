@@ -98,7 +98,15 @@ function filtrar() {
   rellenarFiltrado(resultados);
 }
 
-busquedaInput.addEventListener('input', filtrar);
+function debounce(fn, espera = 300) {
+  let temporizador;
+  return (...args) => {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(() => fn(...args), espera);
+  };
+}
+
+busquedaInput.addEventListener('input', debounce(filtrar, 300));
 
 botones.forEach(boton => {
   boton.addEventListener('click', () => {

@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <script type="module" src="../js/menu.js" defer></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/menu.css">
@@ -14,20 +23,20 @@
   <title>Menu de Productos</title>
 </head>
 
-<body class="w-full min-h-screen m-0 flex flex-col justify-between">
+<body class="w-full min-h-screen m-0 flex flex-col justify-between antialiased">
 
-  <div class="contenedor flex-1">
-
-    <header class="flex justify-around items-center p-3 gap-4 shadow-sm" id="header">
-      <a href="../index.html">
-        <img src="../assets/img/logo.png" alt="Logo de 40-20 Café" class="h-16">
+  <header class="sticky top-0 z-30 w-full shadow-md backdrop-blur-md border-b border-black/10 dark:border-white/10 transition-colors duration-300" id="header">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 sm:gap-6 px-4 sm:px-8 py-3">
+      <a href="../index.html" class="shrink-0">
+        <img src="../assets/img/logo.png" alt="Logo de 40-20 Café" class="h-12 sm:h-16 w-auto transition-transform duration-300 hover:scale-105">
       </a>
-      
+
       <input type="text" id="busqueda" name="usuario" placeholder="Buscar Producto..."
-        class="w-1/2 h-10 rounded-lg placeholder:opacity-50 pl-4 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
-      
-        
-      <a href="../pages/formularioInicioSesion.html" class="p-2.5 rounded-full bg-black/5 hover:bg-black/10 transition flex items-center justify-center" aria-label="Iniciar sesión">
+        class="flex-1 max-w-xl h-10 sm:h-11 rounded-xl px-4 bg-white/90 dark:bg-black/30 text-stone-900 dark:text-stone-100 placeholder:text-stone-500 dark:placeholder:text-stone-400 border border-black/15 dark:border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+
+      <a href="../pages/formularioInicioSesion.html"
+        class="shrink-0 p-2.5 sm:p-3 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/15 dark:hover:bg-white/20 transition-all duration-300 hover:scale-105 flex items-center justify-center"
+        aria-label="Iniciar sesión">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           class="lucide lucide-user preview-icon">
@@ -35,20 +44,23 @@
           <circle cx="12" cy="7" r="4" />
         </svg>
       </a>
-    </header>
+    </div>
+  </header>
 
-    <nav id="nav">
-      <div class="sticky top-7 flex flex-col gap-2 p-2">
-        <button data-categoria="todas" class="active">Todas</button>
-        <button data-categoria="bebidas frías">Bebidas frías</button>
-        <button data-categoria="calientes">Calientes</button>
-        <button data-categoria="postres">Postres</button>
-        <button data-categoria="extras">Extras</button>
+  <div class="max-w-7xl w-full mx-auto flex-1 flex flex-col md:flex-row gap-6 p-4 sm:p-6 lg:p-8">
+
+    <nav id="nav" class="w-full md:w-56 lg:w-64 shrink-0 rounded-2xl shadow-lg border border-black/5 dark:border-white/10 self-start md:sticky md:top-24">
+      <div class="flex flex-row flex-wrap md:flex-col gap-2.5">
+        <button data-categoria="todas" class="active !w-auto md:!w-full flex-1 md:flex-none px-4">Todas</button>
+        <button data-categoria="bebidas frías" class="!w-auto md:!w-full flex-1 md:flex-none px-4">Bebidas frías</button>
+        <button data-categoria="calientes" class="!w-auto md:!w-full flex-1 md:flex-none px-4">Calientes</button>
+        <button data-categoria="postres" class="!w-auto md:!w-full flex-1 md:flex-none px-4">Postres</button>
+        <button data-categoria="extras" class="!w-auto md:!w-full flex-1 md:flex-none px-4">Extras</button>
       </div>
     </nav>
 
-    <main id="main" class="p-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full" id="contenedor-tarjetas">
+    <main id="main" class="flex-1 min-w-0">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full" id="contenedor-tarjetas">
       </div>
     </main>
 
@@ -96,7 +108,7 @@
     </div>
   </footer>
   
-  <button class="fixed bottom-6 right-0 z-50 bg-black/50 hover:bg-black/70 text-4xl font-bold py-5 px-4 rounded-l-lg"
+  <button class="fixed bottom-6 right-0 z-50 bg-black/55 hover:bg-black/75 backdrop-blur-md text-3xl sm:text-4xl font-bold py-4 px-3.5 sm:py-5 sm:px-4 rounded-l-2xl shadow-xl transition-all duration-300 hover:scale-105"
     id="theme-toggle" aria-label="Cambiar modo claro/oscuro">☀️
   </button>
 </body>

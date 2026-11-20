@@ -1,68 +1,42 @@
 /* Variables globales vinculadas desde variables.css */
 
-
 body {
-    background-color: var(--fondo);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: 'Inconsolata', monospace;
-    color: var(--texto);
-
-}
-
-.contenedor {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 20% 1fr 1fr 1fr;
-    grid-template-areas:
-        "header header header header"
-        "nav main main main";
-    gap: 10px;
+  background-color: var(--fondo);
+  font-family: 'Inconsolata', monospace;
+  color: var(--texto);
 }
 
 #header {
-    grid-area: header;
-    background-color: var(--fondo_marcado);
-    width: 100%;
-    height: 100%;
+  background-color: var(--fondo_marcado);
 }
 
 #nav {
-    grid-area: nav;
-    background-color: var(--fondo_alterno);
-    gap: 10px;
-    padding: 15px;
+  background-color: var(--fondo_alterno);
+  padding: 15px;
 }
 
 #nav button {
-    width: 100%;
-    height: 42px;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #f1e9e2;
-    color: #594638;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
+  height: 42px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f1e9e2;
+  color: #594638;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 #nav button:hover {
-    background: #dfcbbb;
+  background: #dfcbbb;
 }
 
 #nav button.active {
-    background: #5b3928;
-    color: white;
-}
-
-#main {
-    grid-area: main;
+  background: #5b3928;
+  color: white;
 }
 
 .tarjeta {
-    background-color: var(--fondo_alterno);
+  background-color: var(--fondo_alterno);
 }
