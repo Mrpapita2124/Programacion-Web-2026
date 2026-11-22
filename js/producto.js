@@ -1,4 +1,6 @@
 import { iniciarBotonTema } from './botonTema.js';
+import { obtenerProductos } from './api.js';
+import { iniciarSugerenciasBusqueda } from './buscadorSugerencias.js';
 
 iniciarBotonTema();
 
@@ -20,7 +22,7 @@ function crearTarjetaHtml(item) {
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
         <p class="text-base">${item.descripcion}</p>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">$${item.precio}${unidadTexto}</span>
+        <span class="precio-badge inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">$${item.precio}${unidadTexto}</span>
       </div>
     </a>
   `;
@@ -34,13 +36,13 @@ function renderizarProducto(item) {
         <img src="${item.imagen}" alt="${item.nombre}" class="max-h-80 sm:max-h-96 w-auto object-contain rounded-xl drop-shadow-md">
       </div>
       <div class="w-full md:w-1/2 flex flex-col items-start gap-4">
-        <span class="inline-block bg-[var(--selecionado)] text-black font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+        <span class="categoria-badge inline-block font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
           ${item.categoria}
         </span>
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">${item.nombre}</h1>
         <p class="text-base sm:text-lg opacity-90 leading-relaxed">${item.descripcion}</p>
         <div class="mt-4 flex items-baseline gap-2">
-          <span class="text-3xl sm:text-4xl font-extrabold text-[var(--texto)]">$${item.precio}</span>
+          <span class="text-3xl sm:text-4xl font-extrabold">$${item.precio}</span>
           <span class="text-base sm:text-lg opacity-75 font-semibold">${unidadTexto}</span>
         </div>
       </div>
@@ -71,33 +73,7 @@ async function cargarProducto() {
   contenedorProducto.innerHTML = '<p class="text-center w-full py-12">Cargando producto...</p>';
 
   try {
-    let jsonData;
-    try {
-      jsonData = await fetch('http://localhost:3000/api/productos');
-      if (!jsonData.ok) throw new Error('Error al conectar con la base de datos');
-    } catch (apiError) {
-      console.warn('Servidor local de Express no disponible, usando respaldo JSON:', apiError);
-      jsonData = await fetch('../data/menu.json');
-    }
-
-    if (!jsonData.ok) {
-      throw new Error('No se pudo cargar el menu!');
-    }
-
-    menuCafeteria = await jsonData.json();
-
-    menuCafeteria.forEach((item, index) => {
-      if (!item.id) {
-        item.id = index + 1;
-      }
-      const nombreArchivo = item.nombre
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/\s+/g, "_");
-
-      item.imagen = `../assets/icons/${nombreArchivo}.png`;
-    });
+    menuCafeteria = await obtenerProductos();
 
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = parseInt(urlParams.get('id'), 10);
@@ -119,9 +95,11 @@ async function cargarProducto() {
 if (busquedaInput) {
   busquedaInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && busquedaInput.value.trim() !== '') {
-      window.location.href = `menu.html`;
+      window.location.href = `busqueda.html?busqueda=${encodeURIComponent(busquedaInput.value.trim())}`;
     }
   });
 }
+
+iniciarSugerenciasBusqueda(busquedaInput, () => menuCafeteria);
 
 cargarProducto();

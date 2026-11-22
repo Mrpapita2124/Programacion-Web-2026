@@ -19,7 +19,7 @@ if (formulario) {
 
 
     if (emailValido && passwordValido) {
-      window.location.href = 'menu.html';
+      window.location.href = 'busqueda.html';
     }
   });
 }

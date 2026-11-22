@@ -1,18 +1,13 @@
 /* Variables globales vinculadas desde variables.css */
 
 body {
-  background-color: var(--fondo);
   font-family: 'Inconsolata', monospace;
-  color: var(--texto);
-}
-
-#header {
-  background-color: var(--fondo_marcado);
 }
 
 #nav {
   background-color: var(--fondo_alterno);
   padding: 15px;
+  border-color: var(--borde_suave);
 }
 
 #nav button {
@@ -20,8 +15,8 @@ body {
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background: #f1e9e2;
-  color: #594638;
+  background: var(--btn_filtro_fondo);
+  color: var(--btn_filtro_texto);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -29,14 +24,10 @@ body {
 }
 
 #nav button:hover {
-  background: #dfcbbb;
+  background: var(--btn_filtro_hover);
 }
 
 #nav button.active {
-  background: #5b3928;
-  color: white;
-}
-
-.tarjeta {
-  background-color: var(--fondo_alterno);
+  background: var(--btn_filtro_activo_fondo);
+  color: var(--btn_filtro_activo_texto);
 }

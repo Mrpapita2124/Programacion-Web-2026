@@ -1,8 +1,6 @@
 /* Variables globales vinculadas desde variables.css */
 
-
 body {
-  background-color: var(--fondo);
   width: 100%;
   height: 100%;
   margin: 0;
@@ -12,6 +10,17 @@ body {
 .formulario__fieldset {
   background-color: var(--fondo_alterno);
   padding: var(--espaciado);
+}
+
+.formulario input {
+  background-color: var(--input_fondo);
+  color: var(--input_texto);
+  border-color: var(--borde_suave);
+}
+
+.formulario input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--selecionado);
 }
 
 label {
@@ -24,7 +33,7 @@ span {
   color: var(--texto);
 }
 
-.formulario button {
+.formulario button[type="submit"] {
   background-color: var(--texto);
   color: var(--fondo);
   border: 1px solid var(--texto);
@@ -35,8 +44,23 @@ span {
   transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
-.formulario button:hover {
+.formulario button[type="submit"]:hover {
   opacity: 0.85;
+}
+
+.formulario button[type="reset"] {
+  background-color: var(--superficie_suave);
+  color: var(--texto);
+  border: 1px solid var(--borde_suave);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formulario button[type="reset"]:hover {
+  background-color: var(--superficie_hover);
 }
 
 legend {
@@ -44,12 +68,9 @@ legend {
 }
 
 .error-campo {
-  color: #dc2626;
+  color: var(--error_texto);
   font-size: calc(var(--tamanio-fuente-altura) * 0.4);
   font-weight: 500;
   display: block;
-}
-
-body.dark .error-campo {
-  color: #f87171;
+  min-height: 18px;
 }

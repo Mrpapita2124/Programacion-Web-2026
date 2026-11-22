@@ -38,15 +38,24 @@
   <title>40-20 Café: Bebidas calientes, frias, deliciosos postres</title>
 </head>
 
-<body
-  class="min-h-screen flex flex-col font-['Inconsolata',monospace] antialiased selection:bg-amber-300 selection:text-amber-950"
-  style="background-color: var(--fondo); color: var(--texto);">
+<body class="min-h-screen flex flex-col font-['Inconsolata',monospace] antialiased">
   <div class="flex flex-col min-h-screen w-full">
     <header class="relative w-full h-56 sm:h-72 md:h-80 flex items-center justify-center overflow-hidden shadow-xl">
       <video class="absolute inset-0 w-full h-full object-cover -z-20 scale-105" autoplay muted loop playsinline>
         <source src="./assets/vid/video stock cafeteria.mp4" type="video/mp4" alt="Video de fondo de la cafetería">
       </video>
       <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/80 -z-10"></div>
+
+      <div class="hidden md:flex items-center gap-2.5 absolute top-4 right-4 sm:right-6 z-20">
+        <a href="pages/productos.html"
+          class="btn-header-secundario text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg backdrop-blur-sm border transition">
+          Catálogo
+        </a>
+        <a href="pages/formularioInicioSesion.html"
+          class="btn-header-secundario text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg backdrop-blur-sm border transition">
+          Iniciar sesión
+        </a>
+      </div>
 
       <div
         class="w-full max-w-6xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4 z-10">
@@ -56,21 +65,19 @@
             class="h-20 sm:h-28 md:h-32 w-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] transition-transform duration-500 hover:scale-105"
             src="./assets/img/logo.png" alt="Logo de 40-20 Café" loading="lazy">
           <h1
-            class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]"
-            style="color: var(--texto-titulo);">40-20 Café</h1>
+            class="titulo-principal text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+            40-20 Café</h1>
         </div>
         <div class="hidden sm:block w-12"></div>
       </div>
     </header>
 
     <nav
-      class="sticky top-0 z-20 w-full shadow-md backdrop-blur-md border-b border-black/10 dark:border-white/10 transition-colors duration-300"
-      style="background-color: var(--fondo_marcado);">
+      class="nav-principal hidden md:block sticky top-0 z-20 w-full shadow-md backdrop-blur-md border-b transition-colors duration-300">
       <ul class="max-w-4xl mx-auto flex items-center justify-around py-2.5 sm:py-3 px-4">
         <li>
-          <a href="pages/menu.html?categoria=calientes" target="_blank" rel="noopener noreferrer"
-            class="flex items-center justify-center p-2.5 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-300"
-            style="color: var(--texto);">
+          <a href="pages/busqueda.html?categoria=calientes" target="_blank" rel="noopener noreferrer"
+            class="btn-icono flex items-center justify-center p-2.5 rounded-xl hover:scale-110 transition-all duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M10 2v2" />
@@ -81,9 +88,8 @@
           </a>
         </li>
         <li>
-          <a href="pages/menu.html?categoria=bebidas frías" target="_blank" rel="noopener noreferrer"
-            class="flex items-center justify-center p-2.5 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-300"
-            style="color: var(--texto);">
+          <a href="pages/busqueda.html?categoria=bebidas frías" target="_blank" rel="noopener noreferrer"
+            class="btn-icono flex items-center justify-center p-2.5 rounded-xl hover:scale-110 transition-all duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m10 20-1.25-2.5L6 18" />
@@ -102,9 +108,8 @@
           </a>
         </li>
         <li>
-          <a href="pages/menu.html?categoria=postres" target="_blank" rel="noopener noreferrer"
-            class="flex items-center justify-center p-2.5 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-300"
-            style="color: var(--texto);">
+          <a href="pages/busqueda.html?categoria=postres" target="_blank" rel="noopener noreferrer"
+            class="btn-icono flex items-center justify-center p-2.5 rounded-xl hover:scale-110 transition-all duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
@@ -120,9 +125,8 @@
           </a>
         </li>
         <li>
-          <a href="pages/menu.html?categoria=extras" target="_blank" rel="noopener noreferrer"
-            class="flex items-center justify-center p-2.5 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 hover:scale-110 transition-all duration-300"
-            style="color: var(--texto);">
+          <a href="pages/busqueda.html?categoria=extras" target="_blank" rel="noopener noreferrer"
+            class="btn-icono flex items-center justify-center p-2.5 rounded-xl hover:scale-110 transition-all duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M8 2h8" />
@@ -137,32 +141,34 @@
 
 
 
-    <aside class="fixed top-3 left-0 z-30">
+    <aside class="fixed top-3 left-0 z-30 md:hidden">
       <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false"
-        class="menu-toggle flex flex-col gap-1.5 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-r-xl py-4 px-3.5 shadow-lg transition-all duration-300">
+        class="menu-toggle aside-panel flex flex-col gap-1.5 backdrop-blur-lg rounded-r-xl py-4 px-3.5 shadow-lg transition-all duration-300">
         <span class="menu-toggle__bar--top"></span>
         <span class="menu-toggle__bar--middle"></span>
         <span class="menu-toggle__bar--bottom"></span>
       </button>
 
       <ul id="aside-menu"
-        class="fixed top-0 left-0 h-screen w-64 -translate-x-full transition-transform duration-300
-         bg-black/85 backdrop-blur-lg flex flex-col justify-center gap-7 pl-10 pr-6 text-white text-xl font-semibold -z-10 shadow-2xl">
-        <li class="aside-menu__nav pb-2 border-b border-white/15">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="hover:text-amber-300 hover:scale-110 transition"><a href="pages/menu.html" target="_blank"
-                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
+        class="aside-panel fixed top-0 left-0 h-screen w-72 -translate-x-full transition-transform duration-300
+         backdrop-blur-lg flex flex-col justify-start gap-2 pt-20 pb-8 px-5 text-lg font-bold -z-10 shadow-2xl border-r overflow-y-auto">
+        <li class="aside-menu__nav pb-4 mb-2 border-b borde-suave">
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="mini-tarjeta aside-link rounded-xl hover:scale-105 transition"><a href="pages/busqueda.html"
+                target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-3"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="M10 2v2" />
                   <path d="M14 2v2" />
                   <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
                   <path d="M6 2v2" />
                 </svg></a></div>
-            <div class="hover:text-amber-300 hover:scale-110 transition"><a href="pages/menu.html" target="_blank"
-                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
+            <div class="mini-tarjeta aside-link rounded-xl hover:scale-105 transition"><a href="pages/busqueda.html"
+                target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-3"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="m10 20-1.25-2.5L6 18" />
                   <path d="M10 4 8.75 6.5 6 6" />
                   <path d="m14 20 1.25-2.5L18 18" />
@@ -176,10 +182,10 @@
                   <path d="m7 21 3-6-1.5-3" />
                   <path d="m7 3 3 6h4" />
                 </svg></a></div>
-            <div class="hover:text-amber-300 hover:scale-110 transition"><a href="#menuAlimentos"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
+            <div class="mini-tarjeta aside-link rounded-xl hover:scale-105 transition"><a href="#menuAlimentos"
+                class="flex items-center justify-center p-3"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                  height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
                   <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" />
                   <path d="M2 21h20" />
@@ -190,10 +196,10 @@
                   <path d="M12 4h.01" />
                   <path d="M17 4h.01" />
                 </svg></a></div>
-            <div class="hover:text-amber-300 hover:scale-110 transition"><a href="#menuBebidas"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
+            <div class="mini-tarjeta aside-link rounded-xl hover:scale-105 transition"><a href="#menuBebidas"
+                class="flex items-center justify-center p-3"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                  height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M8 2h8" />
                   <path
                     d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2" />
@@ -201,47 +207,51 @@
                 </svg></a></div>
           </div>
         </li>
-        <li><a class="hover:text-amber-300 transition block" href="pages/promociones.html">Promociones</a></li>
-        <li><a class="hover:text-amber-300 transition block" href="pages/eventos.html">Eventos</a></li>
-        <li><a class="hover:text-amber-300 transition block" href="pages/ubicaciones.html">Ubicaciones</a></li>
-        <li><a class="hover:text-amber-300 transition block" href="pages/formularioInicioSesion.html">Iniciar sesión</a>
+        <li><a class="aside-link px-4 py-3 rounded-xl hover:translate-x-1 transition-all duration-200 block"
+            href="pages/promociones.html">Promociones</a></li>
+        <li><a class="aside-link px-4 py-3 rounded-xl hover:translate-x-1 transition-all duration-200 block"
+            href="pages/productos.html">Productos</a></li>
+        <li><a class="aside-link px-4 py-3 rounded-xl hover:translate-x-1 transition-all duration-200 block"
+            href="pages/ubicaciones.html">Ubicaciones</a></li>
+        <li class="mt-auto pt-4 border-t borde-suave"><a
+            class="aside-link px-4 py-3 rounded-xl hover:translate-x-1 transition-all duration-200 block"
+            href="pages/formularioInicioSesion.html">Iniciar sesión</a>
         </li>
-        <li><a class="hover:text-amber-300 transition block" href="pages/formularioRegistro.html">Registrarse</a></li>
+        <li><a class="aside-link px-4 py-3 rounded-xl hover:translate-x-1 transition-all duration-200 block"
+            href="pages/formularioRegistro.html">Registrarse</a></li>
       </ul>
 
     </aside>
 
-    <main class="flex-1 flex flex-col gap-10 sm:gap-14 pb-8" style="background-color: var(--fondo);">
+    <main class="flex-1 flex flex-col gap-10 sm:gap-14 pb-8">
 
       <section class="w-full max-w-6xl mx-auto px-6 pt-10 sm:pt-14">
         <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-medium text-center md:text-left leading-relaxed max-w-2xl"
-            style="color: var(--texto);">
+          <p class="text-2xl sm:text-3xl md:text-4xl font-medium text-center md:text-left leading-relaxed max-w-2xl">
             Un <b class="font-extrabold">aroma</b> que despierta tus <i class="italic">sentidos</i> y un sabor diseñado
             para acompañar tus mejores momentos.
           </p>
           <div
-            class="w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 shrink-0 rounded-full shadow-2xl flex items-center justify-center p-4 transition-transform duration-300 hover:scale-105"
-            style="background-color: var(--texto);">
+            class="circulo-tema w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 shrink-0 rounded-full shadow-2xl flex items-center justify-center p-4 transition-transform duration-300 hover:scale-105">
             <img src="./assets/img/frappe.png" alt="Café frappé" loading="lazy"
               class="w-full h-full object-contain rotate-12 hover:-rotate-12 hover:scale-110 transition-transform duration-300">
           </div>
         </div>
       </section>
 
-      <figure class="w-full py-10 px-4 sm:px-8 shadow-inner" style="background-color: var(--fondo_alterno);">
+      <figure class="galeria-tema w-full py-10 px-4 sm:px-8 shadow-inner">
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <img
-            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 ring-0 hover:ring-4 ring-amber-400"
+            class="galeria-img w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300"
             src="./assets/img/cafe.jpg" alt="Café carrusel 1" loading="lazy">
           <img
-            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 ring-0 hover:ring-4 ring-amber-400"
+            class="galeria-img w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300"
             src="./assets/img/cafe2.jpg" alt="Café carrusel 2" loading="lazy">
           <img
-            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 ring-0 hover:ring-4 ring-amber-400"
+            class="galeria-img w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300"
             src="./assets/img/cafe3.jpg" alt="Café carrusel 3" loading="lazy">
           <img
-            class="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 ring-0 hover:ring-4 ring-amber-400"
+            class="galeria-img w-full aspect-[4/3] object-cover rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300"
             src="./assets/img/photo0jpg.jpg" alt="Café carrusel 4" loading="lazy">
         </div>
       </figure>
@@ -261,20 +271,18 @@
       </div>
 
       <section id="descripcion"
-        class="max-w-4xl !mx-auto px-6 sm:px-10 py-8 sm:py-12 rounded-2xl shadow-sm border border-black/5 dark:border-white/10 text-left"
-        style="background-color: var(--fondo_alterno);">
+        class="tarjeta max-w-4xl !mx-auto px-6 sm:px-10 py-8 sm:py-12 rounded-2xl shadow-sm border text-left">
         <h2 class="subtitulo_descripcion text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Sobre Nuestra
           Experiencia</h2>
-        <p
-          class="text-lg sm:text-xl md:text-2xl font-medium sm:font-semibold leading-relaxed mb-4 sm:mb-6 text-amber-950 dark:text-amber-100">
-          En <span class="text-amber-700 dark:text-amber-400 font-bold">40-20 Café</span> nos apasiona crear un espacio
+        <p class="text-lg sm:text-xl md:text-2xl font-medium sm:font-semibold leading-relaxed mb-4 sm:mb-6">
+          En <span class="texto-destacado font-bold">40-20 Café</span> nos apasiona crear un espacio
           acogedor donde cada taza cuenta una historia única.
         </p>
-        <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-5 text-stone-800 dark:text-stone-300">
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-4 sm:mb-5 opacity-90">
           Disfruta de nuestra exclusiva selección de bebidas artesanales frías y calientes, acompañadas de postres
           recién horneados y snacks irresistibles.
         </p>
-        <p class="text-base sm:text-lg md:text-xl leading-relaxed text-stone-700 dark:text-stone-300">
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed opacity-85">
           Seleccionamos cuidadosamente ingredientes de la más alta calidad para garantizar un sabor excepcional en cada
           visita.
         </p>
@@ -282,8 +290,7 @@
 
     </main>
 
-    <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t border-black/10 dark:border-white/10"
-      style="background-color: var(--fondo_alterno); color: var(--texto);">
+    <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t">
       <div
         class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-center sm:items-start gap-8 text-center sm:text-left">
         <div>
@@ -325,7 +332,7 @@
       </div>
 
       <div
-        class="mt-8 pt-6 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
+        class="footer-leyenda mt-8 pt-6 border-t text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
         <p class="italic">© 2026 40-20 Café. Todos los derechos reservados.</p>
         <p class="font-bold my-1">Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins</p>
         <p class="text-xs opacity-75">Versión 1.0.1</p>

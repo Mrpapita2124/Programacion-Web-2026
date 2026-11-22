@@ -17,7 +17,7 @@
     <fieldset class="formulario__fieldset flex flex-col gap-5 p-6 items-start justify-center rounded-[10px] shadow-md w-full">
       
       <div class="flex items-center w-full relative mb-2">
-        <a href="../pages/menu.html" class="text-blue-500 hover:text-blue-700 absolute left-0">
+        <a href="../pages/busqueda.html" class="enlace-tema absolute left-0 transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-arrow-left preview-icon">
@@ -31,14 +31,14 @@
       <br>
       <div class="flex flex-col gap-2 w-full">
         <label for="inp_email">Correo electrónico</label>
-        <input class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        <input class="border rounded py-1 px-2 w-full"
           type="email" id="inp_email" name="email" placeholder="Ingrese su correo electrónico">
         <span class="error-campo" data-error-para="email"></span>
       </div>
 
       <div class="flex flex-col gap-2 w-full">
         <label for="inp_password">Contraseña:</label>
-        <input class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        <input class="border rounded py-1 px-2 w-full"
           type="password" id="inp_password" name="password" placeholder="Ingrese su contraseña">
         <span class="error-campo" data-error-para="password"></span>
       </div>
@@ -51,7 +51,7 @@
       <div class="flex flex-row justify-between items-center w-full text-sm mt-1">
         <div>
           <span>¿No tienes cuenta? </span>
-          <a href="formularioRegistro.html" class="text-blue-500 hover:text-blue-700 underline">Regístrate</a>
+          <a href="formularioRegistro.html" class="enlace-tema underline transition">Regístrate</a>
         </div>
         <button type="reset">Restablecer</button>
       </div>
@@ -60,7 +60,7 @@
   </form>
   </main>
 
-  <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t border-black/10 dark:border-white/10" style="background-color: var(--fondo_alterno); color: var(--texto);">
+  <footer class="footer w-full py-10 px-4 sm:px-8 mt-12 border-t">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-around items-center sm:items-start gap-8 text-center sm:text-left">
       <div>
         <h3 class="text-lg sm:text-xl font-bold mb-3 tracking-wide">Sobre Nosotros</h3>
@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
+    <div class="footer-leyenda mt-8 pt-6 border-t text-center text-xs sm:text-sm opacity-85 leading-relaxed max-w-4xl mx-auto">
       <p class="italic">© 2026 40-20 Café. Todos los derechos reservados.</p>
       <p class="font-bold my-1">Jose Carlos Arce Lopez, Irving Adrian Romero Hernandez, Azarias Villanueva Collins</p>
       <p class="text-xs opacity-75">Versión 1.0.1</p>

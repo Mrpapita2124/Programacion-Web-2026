@@ -1,13 +1,32 @@
 body {
-  background-color: var(--fondo);
   font-family: 'Inconsolata', monospace;
+}
+
+.btn-ver-mas {
+  background-color: var(--superficie_hover);
   color: var(--texto);
 }
 
-#header {
-  background-color: var(--fondo_marcado);
+.btn-ver-mas:hover,
+body.dark .btn-ver-mas:hover {
+  background-color: var(--selecionado);
+  color: var(--fondo);
 }
 
-.tarjeta {
-  background-color: var(--fondo_alterno);
+.hero-tienda {
+  background: var(--hero_gradiente);
+  color: var(--hero_texto);
+}
+
+.hero-titulo {
+  color: var(--texto-titulo);
+}
+
+.hero-cta {
+  background-color: var(--hero_boton_fondo);
+  color: var(--hero_boton_texto);
+}
+
+.hero-cta:hover {
+  background-color: var(--hero_boton_hover);
 }
