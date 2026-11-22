@@ -229,3 +229,14 @@ body {
 .aside-link:hover {
   background-color: var(--superficie_hover);
 }
+
+#theme-toggle {
+  background-color: var(--fondo_alterno);
+  color: var(--texto);
+  border: 1px solid var(--borde_suave);
+  border-right: none;
+}
+
+#theme-toggle:hover {
+  background-color: var(--fondo_marcado);
+}

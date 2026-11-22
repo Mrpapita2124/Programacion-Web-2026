@@ -10,7 +10,7 @@ body {
   border-color: var(--borde_suave);
 }
 
-#nav button {
+#nav button[data-categoria] {
   height: 42px;
   padding: 10px;
   border: none;
@@ -23,11 +23,11 @@ body {
   transition: 0.2s;
 }
 
-#nav button:hover {
+#nav button[data-categoria]:hover {
   background: var(--btn_filtro_hover);
 }
 
-#nav button.active {
+#nav button[data-categoria].active {
   background: var(--btn_filtro_activo_fondo);
   color: var(--btn_filtro_activo_texto);
 }

@@ -9,7 +9,25 @@ iniciarMenuDesplegable();
 
 const contenedorTarjetas = document.querySelector('#contenedor-tarjetas');
 const busquedaInput = document.querySelector("#busqueda");
-const botones = document.querySelectorAll('#nav button');
+const botones = document.querySelectorAll('#nav button[data-categoria]');
+const navFiltros = document.querySelector('#nav');
+const btnAbrirFiltros = document.querySelector('#btn-abrir-filtros');
+const btnCerrarFiltros = document.querySelector('#btn-cerrar-filtros');
+const filtrosBackdrop = document.querySelector('#filtros-backdrop');
+
+function abrirFiltros() {
+  navFiltros.classList.remove('translate-y-full');
+  filtrosBackdrop.classList.remove('hidden');
+}
+
+function cerrarFiltros() {
+  navFiltros.classList.add('translate-y-full');
+  filtrosBackdrop.classList.add('hidden');
+}
+
+btnAbrirFiltros.addEventListener('click', abrirFiltros);
+btnCerrarFiltros.addEventListener('click', cerrarFiltros);
+filtrosBackdrop.addEventListener('click', cerrarFiltros);
 
 let menuCafeteria = [];
 let categoriaActual = 'todas';
