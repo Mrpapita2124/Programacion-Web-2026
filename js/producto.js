@@ -1,6 +1,7 @@
 import { iniciarBotonTema } from './botonTema.js';
 import { obtenerProductos } from './api.js';
 import { iniciarSugerenciasBusqueda } from './buscadorSugerencias.js';
+import { iniciarCarrito, agregarAlCarrito, renderizarCarrito } from './carrito.js';
 
 iniciarBotonTema();
 
@@ -16,13 +17,20 @@ function normalizar(texto) {
 
 function crearTarjetaHtml(item) {
   const unidadTexto = item.unidad_medida ? ` / ${item.unidad_medida}` : '';
+  const agotado = item.disponibles !== undefined && item.disponibles <= 0;
   return `
     <a href="producto.html?id=${item.id}" class="tarjeta block max-w-sm rounded overflow-hidden shadow-lg relative transform transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:z-10 cursor-pointer">
       <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">${item.nombre}</div>
         <p class="text-base">${item.descripcion}</p>
-        <span class="precio-badge inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">$${item.precio}${unidadTexto}</span>
+        <div class="flex flex-wrap items-center justify-between gap-2 mt-3">
+          <span class="precio-badge inline-block rounded-full px-3 py-1 text-sm font-semibold">$${item.precio}${unidadTexto}</span>
+          <button type="button" data-agregar-id="${item.id}" ${agotado ? 'disabled' : ''}
+            class="btn-ver-mas px-3 py-1 rounded-lg text-xs font-bold transition disabled:opacity-45 disabled:cursor-not-allowed">
+            ${agotado ? 'Agotado' : '+ Agregar'}
+          </button>
+        </div>
       </div>
     </a>
   `;
@@ -30,20 +38,34 @@ function crearTarjetaHtml(item) {
 
 function renderizarProducto(item) {
   const unidadTexto = item.unidad_medida ? ` / ${item.unidad_medida}` : '';
+  const descripcionLarga = item.descripcion_larga || item.descripcion;
+  const agotado = item.disponibles !== undefined && item.disponibles <= 0;
+  const textoStock = agotado ? 'Agotado' : `Disponibles: ${item.disponibles}`;
   contenedorProducto.innerHTML = `
     <div class="tarjeta rounded-2xl overflow-hidden shadow-xl p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
       <div class="w-full md:w-1/2 flex justify-center">
-        <img src="${item.imagen}" alt="${item.nombre}" class="max-h-80 sm:max-h-96 w-auto object-contain rounded-xl drop-shadow-md">
+        <img src="${item.imagen}" alt="${item.nombre}" class="h-72 sm:h-80 md:h-96 w-auto max-w-full object-contain rounded-xl drop-shadow-md">
       </div>
       <div class="w-full md:w-1/2 flex flex-col items-start gap-4">
-        <span class="categoria-badge inline-block font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
-          ${item.categoria}
-        </span>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="categoria-badge inline-block font-semibold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+            ${item.categoria}
+          </span>
+          <span class="precio-badge inline-block font-semibold text-xs px-3 py-1.5 rounded-full">
+            ${textoStock}
+          </span>
+        </div>
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">${item.nombre}</h1>
-        <p class="text-base sm:text-lg opacity-90 leading-relaxed">${item.descripcion}</p>
-        <div class="mt-4 flex items-baseline gap-2">
-          <span class="text-3xl sm:text-4xl font-extrabold">$${item.precio}</span>
-          <span class="text-base sm:text-lg opacity-75 font-semibold">${unidadTexto}</span>
+        <p class="text-base sm:text-lg opacity-90 leading-relaxed">${descripcionLarga}</p>
+        <div class="mt-4 flex flex-wrap items-center gap-4">
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl sm:text-4xl font-extrabold">$${item.precio}</span>
+            <span class="text-base sm:text-lg opacity-75 font-semibold">${unidadTexto}</span>
+          </div>
+          <button type="button" id="btn-agregar-producto" data-agregar-id="${item.id}" ${agotado ? 'disabled' : ''}
+            class="btn-ver-mas px-6 py-3 rounded-xl font-bold text-sm sm:text-base shadow-md transition disabled:opacity-45 disabled:cursor-not-allowed">
+            ${agotado ? 'Sin disponibilidad' : 'Agregar al carrito'}
+          </button>
         </div>
       </div>
     </div>
@@ -74,6 +96,7 @@ async function cargarProducto() {
 
   try {
     menuCafeteria = await obtenerProductos();
+    renderizarCarrito();
 
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = parseInt(urlParams.get('id'), 10);
@@ -100,6 +123,15 @@ if (busquedaInput) {
   });
 }
 
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-agregar-id]');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  agregarAlCarrito(btn.dataset.agregarId);
+});
+
 iniciarSugerenciasBusqueda(busquedaInput, () => menuCafeteria);
+iniciarCarrito(() => menuCafeteria);
 
 cargarProducto();

@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carlos López",
+    "notas": "Sin azúcar",
+    "items": [
+      {
+        "id": 1,
+        "nombre": "Coldbrew",
+        "precio": 50,
+        "cantidad": 1,
+        "subtotal": 50
+      },
+      {
+        "id": 18,
+        "nombre": "Cupcakes",
+        "precio": 35,
+        "cantidad": 2,
+        "subtotal": 70
+      }
+    ],
+    "total": 120,
+    "creado": "2026-11-23T12:00:00-07:00"
+  },
+  {
+    "id": 2,
+    "nombre": "Ana Martínez",
+    "notas": "Leche deslactosada",
+    "items": [
+      {
+        "id": 7,
+        "nombre": "Latte",
+        "precio": 45,
+        "cantidad": 2,
+        "subtotal": 90
+      }
+    ],
+    "total": 90,
+    "creado": "2026-11-23T12:30:00-07:00"
+  },
+  {
+    "id": 3,
+    "nombre": "Luis Hernández",
+    "notas": "",
+    "items": [
+      {
+        "id": 2,
+        "nombre": "Frapucchino",
+        "precio": 80,
+        "cantidad": 1,
+        "subtotal": 80
+      },
+      {
+        "id": 20,
+        "nombre": "Pay de Queso",
+        "precio": 40,
+        "cantidad": 1,
+        "subtotal": 40
+      }
+    ],
+    "total": 120,
+    "creado": "2026-11-23T13:15:00-07:00"
+  }
+]

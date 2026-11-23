@@ -2,6 +2,7 @@ import { iniciarBotonTema } from './botonTema.js';
 import { iniciarMenuDesplegable } from './menuDesplegable.js';
 import { obtenerProductos } from './api.js';
 import { iniciarSugerenciasBusqueda } from './buscadorSugerencias.js';
+import { iniciarCarrito, agregarAlCarrito, renderizarCarrito } from './carrito.js';
 
 iniciarBotonTema();
 iniciarMenuDesplegable();
@@ -25,13 +26,20 @@ function normalizar(texto) {
 
 function crearTarjetaHtml(item) {
   const unidadTexto = item.unidad_medida ? ` / ${item.unidad_medida}` : '';
+  const agotado = item.disponibles !== undefined && item.disponibles <= 0;
   return `
     <a href="producto.html?id=${item.id}" class="tarjeta block rounded-xl overflow-hidden shadow-lg relative transform transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:z-10 cursor-pointer">
       <img class="w-full" src="${item.imagen}" alt="${item.nombre}">
       <div class="p-3 sm:px-5 sm:py-4">
         <div class="font-bold text-sm sm:text-xl mb-1 sm:mb-1.5 truncate">${item.nombre}</div>
         <p class="text-xs sm:text-base opacity-85 mb-2 sm:mb-3 line-clamp-2">${item.descripcion}</p>
-        <span class="precio-badge inline-block rounded-full px-2.5 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm font-semibold">$${item.precio}${unidadTexto}</span>
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="precio-badge inline-block rounded-full px-2.5 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm font-semibold">$${item.precio}${unidadTexto}</span>
+          <button type="button" data-agregar-id="${item.id}" ${agotado ? 'disabled' : ''}
+            class="btn-ver-mas px-2.5 py-1 rounded-lg text-xs font-bold transition disabled:opacity-45 disabled:cursor-not-allowed">
+            ${agotado ? 'Agotado' : '+ Agregar'}
+          </button>
+        </div>
       </div>
     </a>
   `;
@@ -107,6 +115,7 @@ async function cargarTienda() {
   try {
     const productos = await obtenerProductos();
     listaProductos = productos;
+    renderizarCarrito();
 
     renderizarCajasCategoria(productos);
     renderizarEstanterias(productos);
@@ -127,6 +136,15 @@ if (busquedaInput) {
   });
 }
 
+seccionesCategorias.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-agregar-id]');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  agregarAlCarrito(btn.dataset.agregarId);
+});
+
 iniciarSugerenciasBusqueda(busquedaInput, () => listaProductos);
+iniciarCarrito(() => listaProductos);
 
 cargarTienda();

@@ -46,11 +46,11 @@
 }
 
 #menu-alimentos {
-  background-image: url("../assets/img/banner_alimentos.png");
+  background-image: url("../assets/img/recursos/banner_alimentos.png");
 }
 
 #menu-bebidas {
-  background-image: url("../assets/img/banner_bebidas.png");
+  background-image: url("../assets/img/recursos/banner_bebidas.png");
 }
 
 #menu-alimentos:hover,
