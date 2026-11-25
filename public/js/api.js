@@ -1,5 +1,5 @@
-const URL_PRODUCTOS_PHP = '../api/productos.php';
-const URL_PEDIDOS_PHP = '../api/pedidos.php';
+const URL_PRODUCTOS_PHP = '../../api/productos.php';
+const URL_PEDIDOS_PHP = '../../api/pedidos.php';
 
 function prepararProductos(productos, rutaImagenes = '../assets/img/productos/') {
   return productos.map((item, index) => {
@@ -73,4 +73,62 @@ export async function crearPedido(pedido) {
   }
 
   return datos;
+}
+
+export async function crearProducto(producto, rutaImagenes = '../assets/img/productos/') {
+  const respuesta = await fetch(URL_PRODUCTOS_PHP, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(producto)
+  });
+
+  const tipo = respuesta.headers.get('content-type') || '';
+  if (!tipo.includes('application/json')) {
+    throw new Error('El servidor PHP no está activo para crear productos.');
+  }
+
+  const datos = await respuesta.json();
+  if (!respuesta.ok) {
+    throw new Error(datos.error || 'No se pudo crear el producto');
+  }
+
+  return prepararProductos([datos], rutaImagenes)[0];
+}
+
+export async function actualizarProducto(id, producto, rutaImagenes = '../assets/img/productos/') {
+  const respuesta = await fetch(`${URL_PRODUCTOS_PHP}?id=${encodeURIComponent(id)}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(producto)
+  });
+
+  const tipo = respuesta.headers.get('content-type') || '';
+  if (!tipo.includes('application/json')) {
+    throw new Error('El servidor PHP no está activo para actualizar productos.');
+  }
+
+  const datos = await respuesta.json();
+  if (!respuesta.ok) {
+    throw new Error(datos.error || 'No se pudo actualizar el producto');
+  }
+
+  return prepararProductos([datos], rutaImagenes)[0];
+}
+
+export async function eliminarProducto(id) {
+  const respuesta = await fetch(`${URL_PRODUCTOS_PHP}?id=${encodeURIComponent(id)}`, {
+    method: 'DELETE'
+  });
+
+  if (respuesta.status === 204) {
+    return true;
+  }
+
+  const tipo = respuesta.headers.get('content-type') || '';
+  if (!tipo.includes('application/json')) {
+    throw new Error('El servidor PHP no está activo para eliminar productos.');
+  }
+
+  const datos = await respuesta.json();
+  throw new Error(datos.error || 'No se pudo eliminar el producto');
 }
